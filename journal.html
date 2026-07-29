@@ -154,14 +154,14 @@
       <span>The {{ brand }} Journal</span>
     </div>
     <h1>Student Journal</h1>
-    <p class="mast-sub">Peer-reviewed papers written by high-school researchers in the {{ brand }} program — spanning mathematics, computer science, biology, policy, and more.</p>
+    <p class="mast-sub">Peer-reviewed papers written by high-school researchers in the {{ brand }} program — spanning biology, medicine, economics, the social sciences, computer science, and more.</p>
     <div class="mast-search">
       <input class="mast-input" type="text" placeholder="Search papers by title, author, or topic…" value="{{ query }}" onChange="{{ onQuery }}">
       <button class="btn">Search</button>
     </div>
     <div class="mast-stats">
       <div class="mast-stat"><div class="num">{{ totalPapers }}</div><div class="lbl">Published papers</div></div>
-      <div class="mast-stat"><div class="num">7</div><div class="lbl">Disciplines</div></div>
+      <div class="mast-stat"><div class="num">6</div><div class="lbl">Disciplines</div></div>
       <div class="mast-stat"><div class="num">2</div><div class="lbl">Issues per year</div></div>
     </div>
   </div>
@@ -198,7 +198,9 @@
               </div>
               <h3>{{ p.title }}</h3>
               <p class="paper-authors">{{ p.author }}</p>
-              <p class="paper-abs">{{ p.abstract }}</p>
+              <sc-if value="{{ p.hasAbstract }}" hint-placeholder-val="{{ false }}">
+                <p class="paper-abs">{{ p.abstract }}</p>
+              </sc-if>
               <div class="paper-foot">
                 <span>{{ p.pages }}</span>
                 <span>{{ p.date }}</span>
@@ -299,8 +301,8 @@ class Component extends DCLogic {
   renderVals() {
     const brand = this.props.brandName ?? 'PAPERS';
     const all = this.state.all || [];
-    const discs = ['All', 'Mathematics', 'Computer Science', 'Physics', 'Biology', 'Social Science', 'Philosophy', 'Policy'];
-    const issues = ['All', 'Vol. 2 · Spring 2026', 'Vol. 1 · Fall 2025', 'Vol. 1 · Spring 2025'];
+    const discs = ['All', 'Biology & Life Sciences', 'Medicine & Health', 'Economics', 'Social Sciences', 'Computer Science', 'Other'];
+    const issues = ['All', 'Vol. 2 · Spring 2026'];
     const q = this.state.query.trim().toLowerCase();
     const filtered = all.filter(p =>
       (this.state.disc === 'All' || p.discipline === this.state.disc) &&
@@ -318,7 +320,7 @@ class Component extends DCLogic {
       onQuery: (e) => this.setState({ query: e.target.value }),
       discFilters: discs.map(d => ({ name: d === 'All' ? 'All disciplines' : d, count: countFor(d), activeClass: this.state.disc === d ? 'active' : '', select: () => this.setState({ disc: d }) })),
       issueFilters: issues.map(i => ({ name: i === 'All' ? 'All issues' : i, count: countForIssue(i), activeClass: this.state.issue === i ? 'active' : '', select: () => this.setState({ issue: i }) })),
-      papers: filtered.map(p => ({ ...p, open: (e) => { e.preventDefault(); this.setState({ selected: p.id, reader: false }); } })),
+      papers: filtered.map(p => ({ ...p, hasAbstract: !!p.abstract, open: (e) => { e.preventDefault(); this.setState({ selected: p.id, reader: false }); } })),
       shownCount: filtered.length,
       resultsWord: filtered.length === 1 ? 'paper' : 'papers',
       noResults: filtered.length === 0,

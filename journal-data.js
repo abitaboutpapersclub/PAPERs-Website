@@ -13,38 +13,39 @@ async function rest(path, opts = {}) {
   return text ? JSON.parse(text) : null;
 }
 
-const iss = ['Vol. 1 · Spring 2025', 'Vol. 1 · Fall 2025', 'Vol. 2 · Spring 2026'];
+const ISSUE = 'Vol. 2 \u00b7 Spring 2026';
 let n = 0;
-const P = (disc, tag, title, author, abstract, issue, pages) => ({
-  id: 'd' + (++n), discipline: disc, tag, title, author, abstract,
-  issue: iss[issue], pages, date: issue === 2 ? 'May 2026' : issue === 1 ? 'Nov 2025' : 'May 2025', pdf: null, pdfName: '',
+// Papers carry no abstract or page range yet — the journal hides both when blank.
+const P = (disc, tag, title, author) => ({
+  id: 'd' + (++n), discipline: disc, tag, title, author, abstract: '',
+  issue: ISSUE, pages: '', date: 'May 2026', pdf: null, pdfName: '',
 });
 export const defaultPapers = [
-  P('Mathematics', 'Biosecurity', 'An Improved Epidemic Model for Interconnected Networks', 'Alex Chen', 'We extend SIR-type epidemic models to interconnected transit networks, showing that hub-targeted intervention reduces peak infection by up to 34% in simulation.', 2, 'pp. 1–18'),
-  P('Computer Science', 'Artificial Intelligence', 'Understanding In-Context Learning: Unraveling Affine Recurrences in GPT-style Models', 'Riley Kim', 'We unravel affine recurrence structures in GPT-style models to explain in-context learning behavior on algorithmic tasks.', 2, 'pp. 19–41'),
-  P('Policy', 'Artificial Intelligence', 'A Risk-Based Licensing System for Public Release of Frontier AI Models', 'Morgan Patel', 'A risk-based licensing framework for public release of frontier AI models, drawing on precedents from biosafety and aviation.', 2, 'pp. 42–60'),
-  P('Biology', 'Biosecurity', 'Accelerating Platform Technology Development for Pandemic Preparedness', 'Casey Rodriguez', 'We survey platform vaccine technologies and identify bottlenecks where targeted funding accelerates pandemic response timelines.', 2, 'pp. 61–77'),
-  P('Philosophy', 'Artificial Intelligence', 'Proposals for Quantitative Measures of Consciousness in AI Systems', 'Quinn Davis', 'We survey candidate quantitative measures of consciousness and assess their applicability to artificial systems.', 2, 'pp. 78–92'),
-  P('Mathematics', 'Global Health & Wellbeing', 'Developing the First Mechanistic Forecast for Future Dengue Prevalence', 'Jordan Lee', 'The first mechanistic forecast of future dengue prevalence, coupling climate projections with vector population dynamics.', 1, 'pp. 1–22'),
-  P('Computer Science', 'Neurodegenerative Disease', 'Kinematic Integrated Gait Analysis for Alzheimer\u2019s Diagnosis', 'Taylor Wong', 'A kinematic gait-analysis pipeline using commodity depth cameras achieves 89% accuracy in early-stage Alzheimer\u2019s screening.', 1, 'pp. 23–39'),
-  P('Physics', 'Climate Change', 'Stratospheric Aerosol Removal Technology', 'Avery Martinez', 'A feasibility study of stratospheric aerosol removal technology and its governance implications.', 1, 'pp. 40–55'),
-  P('Social Science', 'Improving Decision Making', 'Developing a Psychological Scale to Measure Scout Mindset', 'Dakota Brown', 'We develop and validate a psychological scale measuring scout mindset — the disposition to seek accurate beliefs over comfortable ones.', 1, 'pp. 56–71'),
-  P('Policy', 'Nuclear War', 'New Technologies and the Future of Nuclear Deterrence', 'Sage Garcia', 'How emerging technologies reshape nuclear deterrence, and what stability-preserving policy looks like.', 1, 'pp. 72–88'),
-  P('Biology', 'Animal Welfare', 'Mapping Determinants of Zoonotic Spillover', 'Parker Johnson', 'Mapping ecological and economic determinants of zoonotic spillover across 40 years of outbreak data.', 1, 'pp. 89–104'),
-  P('Mathematics', 'Improving Decision Making', 'Democratic Reform via Mathematical Analysis', 'Phoenix Anderson', 'A mathematical analysis of ranked-choice and approval voting under strategic behavior, with proposals for reform grounded in social choice theory.', 0, 'pp. 1–16'),
-  P('Mathematics', 'Nuclear War', 'Location Modelling for Post-Nuclear Refuge Bunkers', 'Alex Garcia', 'We apply facility-location optimization to identify candidate sites for post-nuclear refuge bunkers, balancing population coverage against fallout exposure.', 0, 'pp. 17–30'),
-  P('Computer Science', 'Climate Change', 'Modelling to Maximise the Carbon Sequestration Potential of Seagrass', 'Jordan Chen', 'We model seagrass meadow placement to maximize carbon sequestration, finding coastal-current alignment matters more than total area.', 0, 'pp. 31–47'),
-  P('Computer Science', 'Misinformation', 'An Anti-Misinformation Content Recommendation Algorithm', 'Casey Kim', 'A content recommendation algorithm that demotes misinformation while preserving engagement, evaluated on a 12k-post corpus.', 0, 'pp. 48–63'),
-  P('Physics', 'Climate Change', 'Greenhouse Effect for Good in Industrial Production', 'Morgan Lee', 'Repurposing the greenhouse effect for industrial process heat, cutting fossil inputs in low-temperature manufacturing.', 0, 'pp. 64–78'),
-  P('Physics', 'Space Governance', 'Proposal to Amend the OST for Autonomous Satellites', 'Riley Patel', 'A proposal to amend the Outer Space Treaty to cover autonomous satellite operations and on-orbit liability.', 0, 'pp. 79–92'),
-  P('Biology', 'Global Health & Wellbeing', 'Maternal Mortality: Where Can Resources Go Farthest?', 'Taylor Davis', 'A cost-effectiveness analysis of maternal mortality interventions across low-resource health systems.', 0, 'pp. 93–108'),
-  P('Social Science', 'Global Health & Wellbeing', 'Designing a Clean Cookstove Intervention Template', 'Avery Wong', 'A field-tested template for clean cookstove interventions, synthesizing evidence from 14 deployment studies.', 0, 'pp. 109–121'),
-  P('Social Science', 'Animal Welfare', 'The Impact of Ethical Argument on Moral Attitudes towards Animals', 'Quinn Martinez', 'An experimental study of how ethical argument shifts moral attitudes toward animals, with effects persisting at 30-day follow-up.', 0, 'pp. 122–137'),
-  P('Philosophy', 'Space Governance', 'A Foundation for Ethical Space Expansion', 'Dakota Rodriguez', 'A normative foundation for ethical space expansion, weighing existential opportunity against governance risk.', 0, 'pp. 138–150'),
-  P('Policy', 'Biosecurity', 'A New Model for DNA Synthesis Screening: Policy Proposal', 'Sage Brown', 'A policy proposal for universal DNA synthesis screening with privacy-preserving verification.', 0, 'pp. 151–166'),
+  P('Biology & Life Sciences', 'Gene Editing', 'A Comparative Review of CRISPR-Cas9 Based Therapeutic Strategies for Ankylosing Spondylitis', 'Ryan Baek, Charlize Sow, Ethan Xu'),
+  P('Biology & Life Sciences', 'Developmental Biology', 'Aspartame and Its Effects on Embryonic Development', 'Barrett Kim, Dillon Chugani'),
+  P('Biology & Life Sciences', 'Protein Engineering', 'Can Targeted Amino Acid Substitutions in CPD Photolyase of Rice Near the FAD-Binding Pocket Be Computationally Designed to Stabilize the HQ State of the FAD Cofactor, Enhancing DNA Repair Efficiency Under High UV-B Conditions?', 'Alyssa Gu, Aishwarya Ananthakrishnan, Edward Kim'),
+  P('Biology & Life Sciences', 'Neuroscience', 'The Role of Astrocytes as Contributors to Epileptogenesis and Strategic Future Targets for Epilepsy Treatment', 'Andy Song'),
+  P('Biology & Life Sciences', 'Cognitive Science', 'Cross-Linguistic Patterns in Inducer Concurrent Pairings of Grapheme-Color Synesthesia', 'Carys Harvin'),
+  P('Biology & Life Sciences', 'Cell Biology', 'The Effect of Mitochondrial Therapy on Senescent Cells', 'Shaivi Kancharla'),
+  P('Medicine & Health', 'Pharmacology', 'A Systematic Review on the Use of Oxytocin and Oxytocin Receptor Antagonists to Treat Endometriosis', 'Colin Lee'),
+  P('Medicine & Health', 'Psychiatry', 'The Relationship Between the Receptor Retaining Properties of Aripiprazole and the Effectiveness in Reducing Agitation Symptoms of Schizophrenic Patients', 'Michelle Kim, Johannah Huang'),
+  P('Medicine & Health', 'Public Health', 'The Role of Socioeconomic Status in Breast Cancer Screening Access and Late-Stage Diagnosis in Low-Income Thai Communities', 'Gemmi Haripottawekul'),
+  P('Medicine & Health', 'Oncology', 'Blood–Brain Barrier Development and Treatment Response in Pediatric Brain Tumors', 'Maddie Yang'),
+  P('Economics', 'Behavioral Economics', 'The Impact of Behavioral Economics on Consumer Decision-Making: A Case Study of Anchoring in E-Commerce Pricing Strategies', 'Niccolo Lee-Suk, Eric Myung, Edward Zhang, Daniel Matloff'),
+  P('Economics', 'Economic History', 'The Creation of the Bank of England and its Effect on Humanity\'s Political, Economic, and Societal Development from its Creation in 1800', 'Felix Bret'),
+  P('Economics', 'Health Economics', 'Policy, Politics, and Performance: A Mixed-Methods Analysis of Medicaid Expansion\'s Impact on Hospital Finances in Kentucky and Texas', 'Andrew Park'),
+  P('Social Sciences', 'Game Theory', 'Game Theory\'s Impact on Minorities', 'Aglaia Hong'),
+  P('Social Sciences', 'Media & Cognition', 'Impulse Control and Digital Advertising: A Comparative Analysis of Differing Techniques Utilized by Snapchat and Roblox and Their Resulting Impact on Adolescent Brain Development', 'Mel Guedes, Nandini Sharma'),
+  P('Social Sciences', 'Education Policy', 'Meritocracy and the Socio-Economic Stratification in Selective Higher Education', 'Julien Requa, John Lew, Lucas Suradejvibul'),
+  P('Social Sciences', 'Psychology', 'The Illusion of Transparency in Boarding School: Overestimating Visibility', 'Jacob Shin'),
+  P('Computer Science', 'Machine Learning', 'DeepStain: A Unified Approach for Multi-Domain Immunofluorescence and Immunohistochemistry Staining via Image-to-Image Translation', 'Nicholas Jung'),
+  P('Computer Science', 'Quantum Computing', 'Analyzing Energy Consumption, Efficiency, and Scalability in Classical and Quantum Machines', 'Soohan Cho'),
+  P('Other', 'Astronomy', 'Providing Evidence Against the Fermi Paradox: Incorporating the Kardashev Scale and Drake Equation to Contextualize Life in the Known Universe', 'Claire Bancroft, Ian Kim'),
+  P('Other', 'History', 'Analysis of How Machine Politics Affected New York City Public Works Procurement from 1910–1918', 'Anay Mehta-Manghani, Boson Bai'),
+  P('Other', 'Classics', 'Translation and Interpretation of Female Transformation in Ovid\'s Metamorphoses', 'Serra Akyali'),
 ];
 
-const STORAGE_KEY = 'papers_journal_data';
+const STORAGE_KEY = 'papers_journal_data_v2';
 const TABLE = 'papers';
 const BUCKET = 'papers-pdfs';
 

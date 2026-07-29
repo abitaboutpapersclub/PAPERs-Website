@@ -101,6 +101,13 @@
     .sess-hw { background: #E8F0FF; border-radius: 8px; padding: 16px 20px; }
     .sess-hw .hw-label { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--violet); display: block; margin-bottom: 6px; }
     .sess-hw p { font-size: 13.5px; color: var(--ink); margin: 0; }
+    .sess.locked .sess-n { background: #eef0f4; color: var(--gray-light); }
+    .sess.locked .sess-title { color: var(--gray); }
+    .sess-lock { display: inline-flex; align-items: center; color: var(--gray-light); flex-shrink: 0; }
+    .sess.locked .sess-inner > p { position: relative; padding-bottom: 6px; -webkit-mask-image: linear-gradient(#000 45%, rgba(0,0,0,0.25)); mask-image: linear-gradient(#000 45%, rgba(0,0,0,0.25)); }
+    .sess-gate { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border: 1px dashed #b9c6dc; border-radius: 8px; padding: 16px 20px; }
+    .sess-gate p { font-size: 13.5px; color: var(--gray); margin: 0; flex: 1 1 260px; }
+    .sess-gate .btn { padding: 10px 20px; font-size: 13.5px; flex-shrink: 0; }
 
     /* SCOREBOARD */
     .score-band { background: #E8F0FF; padding: 96px 0; }
@@ -265,7 +272,7 @@
     </div>
     <div class="who-rows">
       <div class="who-row">
-        <p class="who-text">Some questions don't have answers you can look up. Your mentor helps you chase yours somewhere real.</p>
+        <p class="who-text">Some questions don't have answers you can look up. Your mentor helps you chase those answers.</p>
         <div class="pill-wrap"><div class="pill" style="--pc: #9db8dd">
           <img src="images/pill-chase.webp" alt="A student presenting research">
           <div><h4>Chase</h4><p>the questions you can't stop asking</p></div>
@@ -327,13 +334,18 @@
     </div>
     <div class="sess-list">
       <sc-for list="{{ sessions }}" as="s" hint-placeholder-count="11">
-        <div class="sess {{ s.openClass }}">
+        <div class="sess {{ s.openClass }} {{ s.lockClass }}">
           <button class="sess-btn" onClick="{{ s.toggle }}">
             <span class="sess-n">{{ s.n }}</span>
             <span class="sess-main">
               <span class="sess-phase">{{ s.phase }}</span><br>
               <span class="sess-title">{{ s.title }}</span>
             </span>
+            <sc-if value="{{ s.locked }}" hint-placeholder-val="{{ false }}">
+              <span class="sess-lock" aria-label="Members only">
+                <svg width="13" height="15" viewBox="0 0 26 30" fill="none" aria-hidden="true"><rect x="1.5" y="12" width="23" height="16.5" rx="3" stroke="currentColor" stroke-width="2.5"></rect><path d="M6.5 12V8.5a6.5 6.5 0 0 1 13 0V12" stroke="currentColor" stroke-width="2.5"></path></svg>
+              </span>
+            </sc-if>
             <span class="sess-chev">›</span>
           </button>
           <div class="sess-body">
@@ -343,6 +355,12 @@
                 <div class="sess-hw">
                   <span class="hw-label">Take-home</span>
                   <p>{{ s.hw }}</p>
+                </div>
+              </sc-if>
+              <sc-if value="{{ s.locked }}" hint-placeholder-val="{{ false }}">
+                <div class="sess-gate">
+                  <p>The rest of this session — the full walkthrough and its take-home work — unlocks when you join the summer program.</p>
+                  <a href="#apply" class="btn">Apply for summer →</a>
                 </div>
               </sc-if>
             </div>
@@ -544,6 +562,7 @@ class Component extends DCLogic {
 
   renderVals() {
     const brand = this.props.brandName ?? 'Papers';
+    const FREE_SESSIONS = 3;
     const raw = [
       { phase: 'Phase 1 · Initial Research', title: 'Introductory Meeting', desc: 'Full-group kickoff: how the program works, what\u2019s expected of you, and meeting your mentors. Then we jump straight into ideating.', hw: 'Brain-dump at least five research ideas \u2014 anything you\u2019ve ever been super curious about \u2014 then score them on the Idea Scoreboard and share your favorite with a friend or parent.' },
       { phase: 'Phase 1 · Initial Research', title: 'Brainstorming & Parts of a Research Paper', desc: 'Narrow your ideas into a real research question, and take apart a paper to see how it\u2019s built: abstract, intro, methods, results, discussion.', hw: 'Pick your winning idea and draft your research question.' },
@@ -576,7 +595,22 @@ class Component extends DCLogic {
     return {
       brand,
       year: new Date().getFullYear(),
-      sessions: raw.map((x, i) => ({ ...x, n: i + 1, hasHw: !!x.hw, openClass: this.state.open === i ? 'open' : '', toggle: () => this.setState(st => ({ open: st.open === i ? -1 : i })) })),
+      // Sessions 1–3 are a free preview; the rest show a teaser and gate behind applying.
+      sessions: raw.map((x, i) => {
+        const locked = i >= FREE_SESSIONS;
+        const teaser = x.desc.split(/(?<=[.!?])\s/)[0];
+        return {
+          ...x,
+          n: i + 1,
+          desc: locked ? teaser : x.desc,
+          hasHw: !locked && !!x.hw,
+          locked,
+          unlocked: !locked,
+          lockClass: locked ? 'locked' : '',
+          openClass: this.state.open === i ? 'open' : '',
+          toggle: () => this.setState(st => ({ open: st.open === i ? -1 : i })),
+        };
+      }),
       criteria: criteria.map(c => ({ ...c, dots: [1,2,3,4,5].map(v => ({ v, onClass: s[c.key] === v ? 'on' : '', set: () => this.setState(st => ({ scores: { ...st.scores, [c.key]: v } })) })) })),
       total,
       verdict,
