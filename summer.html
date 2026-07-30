@@ -167,6 +167,10 @@
     /* COMPARISON */
     .comp-band { background: #E8F0FF; padding: 96px 0; }
     .comp-scroll { overflow-x: auto; }
+    .comp-hint { display: none; }
+    @media (max-width: 700px) {
+      .comp-hint { display: block; text-align: center; font-size: 12px; font-weight: 500; color: var(--violet); margin: -8px 0 16px; }
+    }
     .comp-table { width: 100%; max-width: 900px; margin: 0 auto; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 14px 40px rgba(23,17,43,0.1); font-size: 14px; min-width: 640px; }
     .comp-table th, .comp-table td { padding: 15px 20px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
     .comp-table thead th { background: var(--violet); color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; border-bottom: none; }
@@ -531,6 +535,7 @@
       <h2 class="sec">Not all research programs are created equal</h2>
       <p>Most programs give every student the same path. {{ brand }} builds yours from scratch.</p>
     </div>
+    <p class="comp-hint">← Swipe to see the full comparison →</p>
     <div class="comp-scroll">
       <table class="comp-table">
         <thead>
@@ -556,10 +561,10 @@
     <p>The program is free, online, and open to curious students through grade ≤10. The application takes about 45 minutes, and rough answers and bullet points are encouraged.</p>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 18px;">
       <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-        <div style="background: #E8F0FF; border-radius: 8px; padding: 14px 22px; text-align: center;"><div style="font-size: 14px; font-weight: 600;">Free</div><div style="font-size: 9.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8595;">No fees</div></div>
-        <div style="background: #E8F0FF; border-radius: 8px; padding: 14px 22px; text-align: center;"><div style="font-size: 14px; font-weight: 600;">Online</div><div style="font-size: 9.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8595;">Anywhere</div></div>
-        <div style="background: #E8F0FF; border-radius: 8px; padding: 14px 22px; text-align: center;"><div style="font-size: 14px; font-weight: 600;">≤10</div><div style="font-size: 9.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8595;">Grade</div></div>
-        <div style="background: #E8F0FF; border-radius: 8px; padding: 14px 22px; text-align: center;"><div style="font-size: 14px; font-weight: 600;">45 min</div><div style="font-size: 9.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8595;">Application</div></div>
+        <div style="background: #E8F0FF; border-radius: 8px; padding: 14px 22px; text-align: center;"><div style="font-size: 14px; font-weight: 600;">Free</div><div style="font-size: 10.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8595;">No fees</div></div>
+        <div style="background: #E8F0FF; border-radius: 8px; padding: 14px 22px; text-align: center;"><div style="font-size: 14px; font-weight: 600;">Online</div><div style="font-size: 10.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8595;">Anywhere</div></div>
+        <div style="background: #E8F0FF; border-radius: 8px; padding: 14px 22px; text-align: center;"><div style="font-size: 14px; font-weight: 600;">≤10</div><div style="font-size: 10.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8595;">Grade</div></div>
+        <div style="background: #E8F0FF; border-radius: 8px; padding: 14px 22px; text-align: center;"><div style="font-size: 14px; font-weight: 600;">45 min</div><div style="font-size: 10.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8595;">Application</div></div>
       </div>
       <a href="index.html#newsletter" class="btn">Start your application →</a>
       <p style="margin: 0; font-size: 12px; color: #8a8595;">No wrong answers. We want to see how you think.</p>
