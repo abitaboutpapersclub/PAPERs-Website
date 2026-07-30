@@ -29,7 +29,8 @@
     .btn-danger:hover { background: #fdf2f1; }
     header { background: #fff; border-bottom: 1px solid var(--line); }
     .nav { display: flex; align-items: center; gap: 30px; height: 68px; }
-    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 21px; margin-right: auto; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 21px; margin-right: auto; }
+    .nav-logo img { height: 30px; width: auto; display: block; }
     .nav-links { display: flex; align-items: center; gap: 26px; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray); }
     .nav-links a:hover { color: var(--ink); }
@@ -79,7 +80,7 @@
 <header data-screen-label="Nav">
   <div class="wrap">
     <nav class="nav">
-      <a href="index.html" class="nav-logo">{{ brand }}</a>
+      <a href="index.html" class="nav-logo"><img src="uploads/logo-mark.png" alt=""><span>{{ brand }}</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="journal.html">Journal</a>

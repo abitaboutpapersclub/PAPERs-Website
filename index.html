@@ -46,7 +46,8 @@
     /* NAV */
     header { position: sticky; top: 0; z-index: 200; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
     .nav { display: flex; align-items: center; gap: 30px; height: 68px; }
-    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 21px; letter-spacing: -0.01em; margin-right: auto; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 21px; letter-spacing: -0.01em; margin-right: auto; }
+    .nav-logo img { height: 30px; width: auto; display: block; }
     .nav-logo span { color: var(--violet); }
     .nav-links { display: flex; align-items: center; gap: 26px; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray); transition: color 0.15s; }
@@ -236,7 +237,8 @@
     /* FOOTER */
     footer { background: #1f3a63; color: rgba(255,255,255,0.65); padding: 64px 0 40px; }
     .foot { display: flex; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
-    .foot-logo { font-weight: 700; font-size: 18px; color: #fff; display: block; margin-bottom: 12px; }
+    .foot-logo { font-weight: 700; font-size: 18px; color: #fff; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .foot-logo img { height: 24px; width: auto; display: block; }
     .foot-logo span { color: #fff; }
     .foot-desc { font-size: 13.5px; line-height: 1.8; max-width: 300px; color: rgba(255,255,255,0.7); }
     .foot-cols { display: flex; gap: 56px; flex-wrap: wrap; }
@@ -250,7 +252,7 @@
 <header data-screen-label="Nav">
   <div class="wrap">
     <nav class="nav">
-      <a href="#" class="nav-logo">{{ brand }}</a>
+      <a href="#" class="nav-logo"><img src="uploads/logo-mark.png" alt=""><span>{{ brand }}</span></a>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="journal.html">Journal</a>
@@ -560,7 +562,7 @@
   <div class="wrap">
     <div class="foot">
       <div>
-        <span class="foot-logo">{{ brand }}</span>
+        <span class="foot-logo"><img src="uploads/logo-mark.png" alt="">{{ brand }}</span>
         <p class="foot-desc">{{ brand }} is a student-run research nonprofit. We pair high schoolers with trained mentors, run a guided summer research program and school-year chapters, and publish finished work in our peer-reviewed journal, all at no cost to students.</p>
       </div>
       <div class="foot-cols">
@@ -596,7 +598,7 @@ class Component extends DCLogic {
   };
 
   componentDidMount() {
-    document.title = (this.props.brandName ?? 'Papers') + ' — Student Research, Mentorship, and Publication';
+    document.title = (this.props.brandName ?? 'Papers');
 
     // hero video: keep it playing no matter what (autoplay policies, tab switches, React dropping the muted attr)
     const v = document.getElementById('hero-video');
