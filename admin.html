@@ -157,7 +157,7 @@
             <div class="field">
               <label>Issue</label>
               <select value="{{ fIssue }}" onChange="{{ setIssue }}">
-                <option value="Vol. 2 · Spring 2026">Vol. 2 · Spring 2026</option>
+                <option value="Vol. 2 · 2026 Cohort">Vol. 2 · 2026 Cohort</option>
                 <option value="Vol. 1 · Fall 2025">Vol. 1 · Fall 2025</option>
                 <option value="Vol. 1 · Spring 2025">Vol. 1 · Spring 2025</option>
               </select>
@@ -220,7 +220,7 @@ class Component extends DCLogic {
   };
 
   blankForm() {
-    return { title: '', author: '', discipline: 'Mathematics', tag: '', issue: 'Vol. 2 \u00b7 Spring 2026', date: '', pages: '', abstract: '', pdf: null, pdfName: '', pdfFile: null };
+    return { title: '', author: '', discipline: 'Mathematics', tag: '', issue: 'Vol. 2 \u00b7 2026 Cohort', date: '', pages: '', abstract: '', pdf: null, pdfName: '', pdfFile: null };
   }
 
   componentDidMount() {

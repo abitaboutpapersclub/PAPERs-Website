@@ -76,6 +76,14 @@
     .mast-img image-slot { display: block; width: 100%; height: 400px; }
     @media (max-width: 900px) { .mast-grid { grid-template-columns: 1fr; gap: 40px; } .mast-img image-slot { height: 280px; } }
 
+    /* TABLE OF CONTENTS */
+    section[id] { scroll-margin-top: 116px; }
+    .toc-band { position: sticky; top: 68px; z-index: 150; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .toc-row { display: flex; gap: 26px; overflow-x: auto; padding: 13px 0; scrollbar-width: none; }
+    .toc-row::-webkit-scrollbar { display: none; }
+    .toc-row a { font-size: 13px; font-weight: 500; color: var(--gray); white-space: nowrap; transition: color 0.15s; }
+    .toc-row a:hover { color: var(--violet); }
+
     /* CURRICULUM OVERVIEW */
     .curr-band { padding: 96px 0 32px; }
     .curr-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 60px; align-items: center; max-width: 1040px; margin: 0 auto; }
@@ -259,6 +267,7 @@
           <li><span class="pt-check">✓</span> Taught by experienced student researchers</li>
           <li><span class="pt-check">✓</span> No experience required</li>
           <li><span class="pt-check">✓</span> Completely free</li>
+          <li><span class="pt-check">✓</span> Middle schoolers welcome</li>
         </ul>
       </div>
       <div class="mast-img">
@@ -268,7 +277,20 @@
   </div>
 </section>
 
-<section class="curr-band" data-screen-label="Curriculum Overview">
+<nav class="toc-band" data-screen-label="Table of Contents">
+  <div class="wrap">
+    <div class="toc-row">
+      <a href="#curriculum">Curriculum</a>
+      <a href="#who-its-for">Who it's for</a>
+      <a href="#structure">How it works</a>
+      <a href="#tracks">Tracks</a>
+      <a href="#comparison">Comparison</a>
+      <a href="#apply">Apply</a>
+    </div>
+  </div>
+</nav>
+
+<section class="curr-band" id="curriculum" data-screen-label="Curriculum Overview">
   <div class="wrap">
     <div class="curr-grid">
       <div class="curr-img">
@@ -285,7 +307,7 @@
   </div>
 </section>
 
-<section class="who-band" data-screen-label="Who It's For">
+<section class="who-band" id="who-its-for" data-screen-label="Who It's For">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Who it's for</span>
@@ -317,7 +339,7 @@
   </div>
 </section>
 
-<section class="phase-band" data-screen-label="Phases">
+<section class="phase-band" id="structure" data-screen-label="Phases">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">How it's structured</span>
@@ -423,7 +445,7 @@
   </div>
 </section>
 
-<section class="track-band" data-screen-label="Tracks">
+<section class="track-band" id="tracks" data-screen-label="Tracks">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Choose your track</span>
@@ -502,7 +524,7 @@
   </div>
 </section>
 
-<section class="comp-band" data-screen-label="Comparison">
+<section class="comp-band" id="comparison" data-screen-label="Comparison">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">The difference</span>

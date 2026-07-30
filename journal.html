@@ -331,7 +331,7 @@ class Component extends DCLogic {
     const brand = this.props.brandName ?? 'PAPERS';
     const all = this.state.all || [];
     const discs = ['All', 'Biology & Life Sciences', 'Medicine & Health', 'Economics', 'Social Sciences', 'Computer Science', 'Other'];
-    const issues = ['All', 'Vol. 2 · Spring 2026'];
+    const issues = ['All', 'Vol. 2 · 2026 Cohort'];
     const q = this.state.query.trim().toLowerCase();
     const filtered = all.filter(p =>
       (this.state.disc === 'All' || p.discipline === this.state.disc) &&

@@ -13,7 +13,7 @@ async function rest(path, opts = {}) {
   return text ? JSON.parse(text) : null;
 }
 
-const ISSUE = 'Vol. 2 \u00b7 Spring 2026';
+const ISSUE = 'Vol. 2 \u00b7 2026 Cohort';
 let n = 0;
 // Papers carry no abstract or page range yet — the journal hides both when blank.
 const P = (disc, tag, title, author) => ({
