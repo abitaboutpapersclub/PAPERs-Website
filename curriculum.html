@@ -21,6 +21,7 @@
     a { color: inherit; text-decoration: none; }
     body { font-family: 'Poppins', sans-serif; color: var(--ink); background: #fff; background-image: linear-gradient(rgba(31,58,99,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(31,58,99,0.1) 1px, transparent 1px); background-size: 56px 56px; font-size: 16px; line-height: 1.7; }
     .wrap { max-width: 1140px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 640px) { .wrap { padding: 0 22px; } }
     .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--violet); color: #fff; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; padding: 12px 26px; border-radius: 6px; border: none; cursor: pointer; transition: background 0.15s; }
     .btn:hover { background: var(--violet-dark); }
     .btn-ghost { background: #fff; color: var(--violet); border: 1.5px solid var(--violet); }
@@ -40,7 +41,19 @@
     .nav-join-menu > div { background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 10px 30px rgba(23,17,43,0.14); padding: 6px; min-width: 230px; display: flex; flex-direction: column; }
     .nav-join-menu a { display: block; font-size: 13.5px; font-weight: 500; color: var(--ink); padding: 10px 14px; border-radius: 6px; }
     .nav-join-menu a:hover { background: #E8F0FF; color: var(--violet); }
-    @media (max-width: 800px) { .nav-links a:not(.btn) { display: none; } }
+    .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 10px; margin: -10px -6px -10px 0; flex-direction: column; gap: 5px; }
+    .nav-ham span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .nav-menu { display: none; }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .nav-ham { display: flex; }
+      .nav-menu { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 18px 40px rgba(23,17,43,0.12); padding: 8px 22px 20px; }
+      .nav-menu.open { display: block; }
+      .nav-menu > a { display: block; padding: 14px 4px; font-size: 16px; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); }
+      .nav-menu > a.active { color: var(--violet); font-weight: 600; }
+      .nav-menu-cta { display: flex; flex-direction: column; gap: 10px; padding-top: 18px; }
+      .nav-menu-cta .btn { text-align: center; justify-content: center; color: #fff; }
+    }
 
     .lock-band { min-height: calc(100vh - 68px); display: flex; align-items: center; justify-content: center; padding: 80px 24px; }
     .lock-card { max-width: 560px; width: 100%; text-align: center; background: #fff; border: 2.5px solid #111; border-radius: 12px; padding: 56px 48px; }
@@ -71,7 +84,19 @@
           </div></div>
         </div>
       </div>
+      <button class="nav-ham" onClick="{{ toggleNav }}" aria-label="Open menu"><span></span><span></span><span></span></button>
     </nav>
+  </div>
+  <div class="nav-menu {{ navOpenClass }}">
+    <a href="index.html">Home</a>
+    <a href="journal.html">Journal</a>
+    <a href="chapters.html">Chapters</a>
+    <a href="curriculum.html" class="active">Curriculum</a>
+    <a href="summer.html">Summer</a>
+    <div class="nav-menu-cta">
+      <a href="chapters.html#reach-out" class="btn">Apply for a Chapter</a>
+      <a href="summer.html#apply" class="btn">Apply for Summer Program</a>
+    </div>
   </div>
 </header>
 
@@ -93,11 +118,16 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;PAPERS&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:700}}">
 class Component extends DCLogic {
+  state = { navOpen: false };
   componentDidMount() {
     document.title = (this.props.brandName ?? 'PAPERS') + ' — Curriculum';
   }
   renderVals() {
-    return { brand: this.props.brandName ?? 'PAPERS' };
+    return {
+      brand: this.props.brandName ?? 'PAPERS',
+      navOpenClass: this.state.navOpen ? 'open' : '',
+      toggleNav: () => this.setState({ navOpen: !this.state.navOpen }),
+    };
   }
 }
 </script>
