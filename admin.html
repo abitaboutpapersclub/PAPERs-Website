@@ -8,6 +8,10 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" href="favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
@@ -29,8 +33,7 @@
     .btn-danger:hover { background: #fdf2f1; }
     header { background: #fff; border-bottom: 1px solid var(--line); }
     .nav { display: flex; align-items: center; gap: 30px; height: 68px; }
-    .nav-logo { display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 21px; margin-right: auto; }
-    .nav-logo img { height: 30px; width: auto; display: block; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 21px; margin-right: auto; }
     .nav-links { display: flex; align-items: center; gap: 26px; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray); }
     .nav-links a:hover { color: var(--ink); }
@@ -80,7 +83,7 @@
 <header data-screen-label="Nav">
   <div class="wrap">
     <nav class="nav">
-      <a href="index.html" class="nav-logo"><img src="uploads/logo-mark.png" alt=""><span>{{ brand }}</span></a>
+      <a href="index.html" class="nav-logo">{{ brand }}</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="journal.html">Journal</a>
