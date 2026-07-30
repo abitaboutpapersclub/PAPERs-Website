@@ -318,17 +318,17 @@
   </div>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;PAPERS&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Papers&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900}}">
 class Component extends DCLogic {
   state = { disc: 'All', issue: 'All', query: '', all: null, selected: null, reader: false, navOpen: false };
 
   componentDidMount() {
-    document.title = (this.props.brandName ?? 'PAPERS') + ' Journal';
+    document.title = (this.props.brandName ?? 'Papers') + ' Journal';
     import('./journal-data.js').then(m => m.fetchPapers().then(all => this.setState({ all })));
   }
 
   renderVals() {
-    const brand = this.props.brandName ?? 'PAPERS';
+    const brand = this.props.brandName ?? 'Papers';
     const all = this.state.all || [];
     const discs = ['All', 'Biology & Life Sciences', 'Medicine & Health', 'Economics', 'Social Sciences', 'Computer Science', 'Other'];
     const issues = ['All', 'Vol. 2 · 2026 Cohort'];

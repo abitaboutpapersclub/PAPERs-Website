@@ -274,16 +274,16 @@
   </div>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;PAPERS&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;chaptersEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;chapters@papersprogram.org&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Papers&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;chaptersEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;chapters@papersprogram.org&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900}}">
 class Component extends DCLogic {
   state = { name: '', school: '', type: '', msg: '', navOpen: false };
 
   componentDidMount() {
-    document.title = (this.props.brandName ?? 'PAPERS') + ' - Chapters';
+    document.title = (this.props.brandName ?? 'Papers') + ' - Chapters';
   }
 
   renderVals() {
-    const brand = this.props.brandName ?? 'PAPERS';
+    const brand = this.props.brandName ?? 'Papers';
     const to = this.props.chaptersEmail ?? 'chapters@papersprogram.org';
     return {
       brand,

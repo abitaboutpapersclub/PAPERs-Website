@@ -120,15 +120,15 @@
   </div>
 </section>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;PAPERS&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:700}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Papers&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:700}}">
 class Component extends DCLogic {
   state = { navOpen: false };
   componentDidMount() {
-    document.title = (this.props.brandName ?? 'PAPERS') + ' - Curriculum';
+    document.title = (this.props.brandName ?? 'Papers') + ' - Curriculum';
   }
   renderVals() {
     return {
-      brand: this.props.brandName ?? 'PAPERS',
+      brand: this.props.brandName ?? 'Papers',
       navOpenClass: this.state.navOpen ? 'open' : '',
       toggleNav: () => this.setState({ navOpen: !this.state.navOpen }),
     };
