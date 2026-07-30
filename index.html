@@ -725,15 +725,19 @@ class Component extends DCLogic {
       toggleChev1: toggleChev('chev1'),
       toggleChev2: toggleChev('chev2'),
       toggleChev3: toggleChev('chev3'),
+  
       // list rendered twice so the -50% marquee animation loops seamlessly
       testimonials: (list => list.concat(list))([
-        { initials: 'SM', name: 'Seokhun Moon', meta: 'Asynchronous Member', quote: React.createElement('span', null, brand + '  is an important step toward my long-term goal of pursuing STEM research. It helped me develop research, writing, and critical thinking skills that ', React.createElement('strong', null, 'will be useful for future science competitions and high school research projects'), '.') },
-        { initials: 'ZA', name: 'Zachary Abraham', meta: 'In-Person (International)', quote: React.createElement('span', null, 'In the future I want to be involved in research of things specifically in STEM, ', React.createElement('strong', null, 'that is why this course has fit so well to my future goals. '))},
-        { initials: 'EL', name: 'Eliana', meta: 'LIVE Tutor \u00b7 Princeton', quote: React.createElement('span', null, 'I\u2019ve learned ', React.createElement('strong', null, 'how fun it is to have a cool, academic, independent project'), ' to work on.') },
-        { initials: 'HU', name: 'Huyen', meta: 'EGMO Medalist \u00b7 Cambridge', quote: React.createElement('span', null, 'I had ', React.createElement('strong', null, 'meaningful discussions with friends'), ' whom I will cherish for life!') },
-        { initials: 'EG', name: 'Ege', meta: 'IEO Medalist \u00b7 Oxford', quote: React.createElement('span', null, brand + ' is ', React.createElement('strong', null, 'the place to be for teenagers'), ' who want to have an impact on the world.') },
-        { initials: 'GR', name: 'Grace', meta: 'Cambridge', quote: React.createElement('span', null, 'An amazing opportunity to ', React.createElement('strong', null, 'work on a project which could have a real impact'), ' in the world.') },
+        { initials: 'SM', name: 'Seokhun M.', meta: '2026 Cohort \u00b7 Asynchronous', quote: React.createElement('span', null, 'This program is an important step toward my long-term goal of pursuing STEM research. It helped me develop research, writing, and critical thinking skills that ', React.createElement('strong', null, 'will be useful for future science competitions and high school research projects'), '.') },
+        { initials: 'TV', name: 'Triaksha V.', meta: '2026 Cohort \u00b7 In-Person (Domestic)', quote: React.createElement('span', null, 'I got to experience what real research is like. I learned ', React.createElement('strong', null, 'how to read scientific papers, analyze evidence, and develop my own research question'), ' instead of just looking up information online.') },
+        { initials: 'ZA', name: 'Zachary A.', meta: '2026 Cohort \u00b7 In-Person (International)', quote: React.createElement('span', null, 'In the future I want to be involved in research of things specifically in STEM. ', React.createElement('strong', null, 'That is why this course has fit so well to my future goals.')) },
+        { initials: 'PP', name: 'Papers Participant', meta: '2026 Cohort \u00b7 In-Person (International)', quote: React.createElement('span', null, 'Before the program, I didn\u2019t know the outline or structure of a research paper. By participating, I ', React.createElement('strong', null, 'learned so much about how a paper is structured and organized'), ' \u2014 it answered all of my questions.') },
+        { initials: 'DD', name: 'Delisha D.', meta: '2026 Cohort \u00b7 In-Person (Domestic)', quote: React.createElement('span', null, 'I enjoyed being able to ', React.createElement('strong', null, 'choose a topic I was genuinely interested in'), ' and explore it in detail. Working with my partner meant we had to communicate and collaborate the whole way through.') },
+        { initials: 'P', name: 'Parent', meta: '2026 Cohort \u00b7 In-Person (Domestic)', quote: React.createElement('span', null, 'This program ', React.createElement('strong', null, 'strengthened my child\u2019s interest in research and neuroscience'), ' while helping her build confidence and critical thinking skills.') },
+        { initials: 'NY', name: 'Noah Y.', meta: '2026 Cohort \u00b7 Asynchronous', quote: React.createElement('span', null, 'They gave me feedback even as an asynchronous student, and ', React.createElement('strong', null, 'made me feel like I wasn\u2019t doing the project alone'), '.') },
+        { initials: 'P', name: 'Parent', meta: '2026 Cohort \u00b7 In-Person (International)', quote: React.createElement('span', null, 'She was enthusiastic about reading papers and understanding the science. It ', React.createElement('strong', null, 'fostered a sense of curiosity'), '.') },
       ]),
+  
       disciplines: rawDisciplines.map((d, i) => ({
         ...d,
         openClass: this.state.openDisc === i ? 'open' : '',
