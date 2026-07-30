@@ -81,26 +81,6 @@
     .path p { font-size: 14px; color: var(--gray); line-height: 1.8; margin-bottom: 18px; flex: 1; }
     .path .tagline { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--violet); display: block; margin-bottom: 10px; }
 
-    /* SCHOOL DIRECTORY */
-    .dir-band { padding: 96px 0; }
-    .dir-stats { display: flex; justify-content: center; gap: 0; margin-bottom: 40px; flex-wrap: wrap; }
-    .dir-stat { text-align: center; padding: 0 48px; border-right: 1px solid var(--line); }
-    .dir-stat:last-child { border-right: none; }
-    .dir-stat .num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; line-height: 1; color: var(--violet); }
-    .dir-stat .lbl { font-size: 11.5px; color: var(--gray-light); margin-top: 7px; letter-spacing: 0.08em; text-transform: uppercase; }
-    .dir-acc { max-width: 860px; margin: 0 auto; border-top: 1px solid var(--line); }
-    .dir-item { border-bottom: 1px solid var(--line); }
-    .dir-btn { display: flex; align-items: center; gap: 14px; width: 100%; background: none; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); padding: 20px 8px; text-align: left; }
-    .dir-btn .dir-meta { margin-left: auto; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-light); }
-    .dir-btn .dir-chev { font-size: 18px; color: var(--violet); transition: transform 0.2s ease; }
-    .dir-item.open .dir-chev { transform: rotate(90deg); }
-    .dir-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .dir-item.open .dir-body { max-height: 400px; }
-    .dir-grid { display: grid; grid-template-columns: 280px 1fr; gap: 28px; padding: 4px 8px 28px; align-items: start; }
-    @media (max-width: 700px) { .dir-grid { grid-template-columns: 1fr; } }
-    .dir-grid h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 8px; }
-    .dir-proj { font-size: 14px; color: var(--gray); line-height: 1.8; }
-
     /* CONTACT */
     .contact-band { padding: 96px 0; }
     .contact-card { max-width: 620px; margin: 0 auto; background: #fff; border: 2.5px solid #111; border-radius: 10px; padding: 38px 40px; }
@@ -150,7 +130,7 @@
   <div class="wrap">
     <span class="mast-eyebrow">{{ brand }} Chapters</span>
     <h1>Bring research to your school.</h1>
-    <p class="mast-sub">A {{ brand }} Chapter is a student-run research club at your high school — with a ready-made curriculum, shared guest speakers, peer editing across the network, and a path to publishing in the {{ brand }} Journal. No research course at your school? That's exactly why we exist.</p>
+    <p class="mast-sub">A {{ brand }} Chapter is a student-run research org/club at your school. Whether you already have a different club under a different name or don't have a club established yet, we'd love to help other high schoolers make research more accessible. Reach out to us to get access to our curriculum, slideshows, and organization; resources, example papers, and guest speakers; and collaboration between our global chapters network and journal. Fill out the form below or email us, and one of our outreach coordinators will give you access to the above!</p>
     <span class="mast-search"><a href="#reach-out" class="btn">Reach out to start a chapter →</a></span>
   </div>
 </section>
@@ -164,11 +144,11 @@
     <div class="perk-grid">
       <div class="perk">
         <h4>A finalized curriculum</h4>
-        <p>Meeting-by-meeting slide decks, worksheets, and resources — objectives set for each period so leaders can focus on running the club, not inventing it.</p>
+        <p>Meeting-by-meeting slide decks, worksheets, and resources, with objectives set for each period so leaders can focus on running the club, not inventing it.</p>
       </div>
       <div class="perk">
         <h4>Shared guest speakers</h4>
-        <p>Chapters across the network share access to guest speakers — researchers, professors, and college students — scheduled through the year.</p>
+        <p>Chapters across the network share access to guest speakers (researchers, professors, and college students) scheduled through the year.</p>
       </div>
       <div class="perk">
         <h4>Peer editing across schools</h4>
@@ -186,7 +166,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Two ways in</span>
-      <h2 class="sec">New club or existing club — both work</h2>
+      <h2 class="sec">New club or existing club, both work</h2>
     </div>
     <div class="paths">
       <div class="path">
@@ -205,43 +185,12 @@
   </div>
 </section>
 
-<section class="dir-band" data-screen-label="Our Chapters">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Our chapters</span>
-      <h2 class="sec">Schools in the network</h2>
-      <p>Each chapter gets its own page with photos and projects — coming as schools are finalized.</p>
-    </div>
-    <div class="dir-stats">
-      <div class="dir-stat"><div class="num">##</div><div class="lbl">Chapter schools</div></div>
-      <div class="dir-stat"><div class="num">###</div><div class="lbl">Student researchers</div></div>
-      <div class="dir-stat"><div class="num">##</div><div class="lbl">States</div></div>
-    </div>
-    <div class="dir-acc">
-      <sc-for list="{{ schools }}" as="s" hint-placeholder-count="3">
-        <div class="dir-item {{ s.openClass }}">
-          <button class="dir-btn" onClick="{{ s.toggle }}"><span>{{ s.name }}</span><span class="dir-meta">{{ s.meta }}</span><span class="dir-chev">›</span></button>
-          <div class="dir-body">
-            <div class="dir-grid">
-              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ s.photoId }}" shape="rounded" radius="8" placeholder="Drop a chapter photo" style="width: 100%; height: 180px" hint-size="100%,180px"></x-import>
-              <div>
-                <h4>Current projects</h4>
-                <p class="dir-proj">{{ s.projects }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </sc-for>
-    </div>
-  </div>
-</section>
-
 <section class="contact-band" id="reach-out" data-screen-label="Reach Out">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Reach out</span>
       <h2 class="sec">Tell us about your school</h2>
-      <p>Fill this out and it opens an email to our chapters team — we usually reply within a few days.</p>
+      <p>Fill this out and it opens an email to our chapters team. We usually reply within a few days.</p>
     </div>
     <div class="contact-card">
       <h3>Chapter interest form</h3>
@@ -263,7 +212,7 @@
         <textarea rows="4" placeholder="Tell us about your school and what you're hoping to build…" value="{{ fMsg }}" onChange="{{ setMsg }}"></textarea>
       </div>
       <button class="btn" onClick="{{ sendEmail }}">Open email to send →</button>
-      <p class="contact-note">This opens your email app with everything pre-filled — just hit send.</p>
+      <p class="contact-note">This opens your email app with everything pre-filled, just hit send.</p>
     </div>
   </div>
 </section>
@@ -298,10 +247,10 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;PAPERS&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;chaptersEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;chapters@papersprogram.org&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { name: '', school: '', type: '', msg: '', openSchool: -1 };
+  state = { name: '', school: '', type: '', msg: '' };
 
   componentDidMount() {
-    document.title = (this.props.brandName ?? 'PAPERS') + ' — Chapters';
+    document.title = (this.props.brandName ?? 'PAPERS') + ' - Chapters';
   }
 
   renderVals() {
@@ -310,24 +259,13 @@ class Component extends DCLogic {
     return {
       brand,
       year: new Date().getFullYear(),
-      schools: [
-        { name: 'School name — coming soon', meta: 'Founding chapter' },
-        { name: 'School name — coming soon', meta: 'Chapter' },
-        { name: 'Your school here?', meta: 'Reach out below' },
-      ].map((s, i) => ({
-        ...s,
-        projects: 'Project titles and photos will appear here once the chapter\u2019s first cohort is underway.',
-        photoId: 'chapter-school-' + (i + 1),
-        openClass: this.state.openSchool === i ? 'open' : '',
-        toggle: () => this.setState({ openSchool: this.state.openSchool === i ? -1 : i }),
-      })),
       fName: this.state.name, setName: (e) => this.setState({ name: e.target.value }),
       fSchool: this.state.school, setSchool: (e) => this.setState({ school: e.target.value }),
       fType: this.state.type, setType: (e) => this.setState({ type: e.target.value }),
       fMsg: this.state.msg, setMsg: (e) => this.setState({ msg: e.target.value }),
       sendEmail: () => {
         const s = this.state;
-        const subject = `Chapter interest — ${s.school || 'my school'}`;
+        const subject = `Chapter interest: ${s.school || 'my school'}`;
         const body = `Hi ${brand} team,%0D%0A%0D%0AName: ${encodeURIComponent(s.name)}%0D%0ASchool: ${encodeURIComponent(s.school)}%0D%0ANew chapter or existing club: ${encodeURIComponent(s.type)}%0D%0A%0D%0A${encodeURIComponent(s.msg)}`;
         window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
       },

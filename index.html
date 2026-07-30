@@ -195,17 +195,6 @@
       .map-band { padding: 64px 0 56px; }
     }
 
-    /* SPEAKERS */
-    .spk-band { background: #E8F0FF; padding: 96px 0; }
-    .spk-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; justify-items: stretch; max-width: 1060px; margin: 0 auto; }
-    .spk-card { background: #fff; border-radius: 12px; padding: 32px 20px 28px; text-align: center; }
-    .spk-card image-slot { display: block; width: 96px; height: 96px; margin: 0 auto 18px; }
-    .spk-name { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-    .spk-bio { font-size: 14px; color: var(--gray); line-height: 1.7; }
-    .spk-bio strong { color: var(--ink); font-weight: 600; }
-    @media (max-width: 900px) { .spk-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 540px) { .spk-grid { grid-template-columns: 1fr; } }
-
     /* FAQ */
     .faq-band { background: #1f3a63; padding: 96px 0; color: #fff; }
     .faq-band .acc { background: transparent; border-top: 1px solid #fff; }
@@ -509,42 +498,6 @@
   </div>
 </section>
 
-<section class="spk-band" id="team" data-screen-label="Speakers">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Meet the Team</span>
-      <h2 class="sec">The people behind {{ brand }}</h2>
-    </div>
-    <div class="spk-grid">
-      <div class="spk-card">
-        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-1" shape="circle" placeholder="Photo" style="width: 96px; height: 96px" hint-size="96px,96px"></x-import>
-        <p class="spk-name">Name</p>
-        <p class="spk-bio"><strong>Co-Head</strong> — school, field, and a line about them.</p>
-      </div>
-      <div class="spk-card">
-        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-2" shape="circle" placeholder="Photo" style="width: 96px; height: 96px" hint-size="96px,96px"></x-import>
-        <p class="spk-name">Name</p>
-        <p class="spk-bio"><strong>Co-Head</strong> — school, field, and a line about them.</p>
-      </div>
-      <div class="spk-card">
-        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-3" shape="circle" placeholder="Photo" style="width: 96px; height: 96px" hint-size="96px,96px"></x-import>
-        <p class="spk-name">Name</p>
-        <p class="spk-bio"><strong>Director of Chapters</strong> — school, field, and a line about them.</p>
-      </div>
-      <div class="spk-card">
-        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-4" shape="circle" placeholder="Photo" style="width: 96px; height: 96px" hint-size="96px,96px"></x-import>
-        <p class="spk-name">Name</p>
-        <p class="spk-bio"><strong>Director of Curriculum</strong> — school, field, and a line about them.</p>
-      </div>
-      <div class="spk-card">
-        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-5" shape="circle" placeholder="Photo" style="width: 96px; height: 96px" hint-size="96px,96px"></x-import>
-        <p class="spk-name">Name</p>
-        <p class="spk-bio"><strong>Journal Editor-in-Chief</strong> — school, field, and a line about them.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="faq-band" id="faqs" data-screen-label="FAQs">
   <div class="wrap">
     <div class="sec-head">
@@ -622,7 +575,6 @@
         <div class="foot-col">
           <h4>Organization</h4>
           <a href="#mission">Mission</a>
-          <a href="#team">Team</a>
           <a href="journal.html">Journal</a>
           <a href="chapters.html#reach-out">Contact</a>
         </div>
