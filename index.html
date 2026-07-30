@@ -280,7 +280,7 @@
       <li><span class="pt-check">✓</span> Boost high school and college admissions</li>
     </ul>
     <div class="hero-ticker">
-      <div class="tick-num">{{ tickerVal }}</div>
+      <div class="tick-num">{{ tickerVal }}+</div>
       <div class="tick-label">Active summer projects</div>
       <div class="tick-sub">and counting</div>
     </div>
@@ -631,7 +631,7 @@ class Component extends DCLogic {
       requestAnimationFrame(tick);
     }
     import('./journal-data.js').then(m => m.fetchPapers().then(journalPapers => this.setState({ journalPapers })));
-    const target = 22, dur = 1200, start = performance.now();
+    const target = 50, dur = 1200, start = performance.now();
     const step = (t) => {
       const p = Math.min((t - start) / dur, 1);
       this.setState({ ticker: Math.round(target * (1 - Math.pow(1 - p, 3))) });
@@ -661,7 +661,7 @@ class Component extends DCLogic {
       { q: 'Who are the mentors?', a: 'Experienced student researchers and university mentors from our partner-school network, trained on our curriculum and matched to your research topic.' },
       { q: 'Where can I apply?', a: React.createElement('span', null, 'You can find our application form ', React.createElement('a', { href: '#newsletter', style: { color: '#fff', textDecoration: 'underline' } }, 'here'), '.') },
       { q: 'Are the classes held online or in-person?', a: 'Classes are held online via Zoom.' },
-      { q: 'Is there an age or grade requirement?', a: 'The typical grade cutoff is 12th grade, but as long as you haven’t graduated college yet, you’re eligible to apply.' },
+      { q: 'Is there an age or grade requirement?', a: 'The typical grade cutoff is 12th grade, but as long as you haven’t graduated high school yet, you’re eligible to apply.' },
       { q: 'Do I need a group to start a Chapter?', a: 'No. One student is enough to start a chapter. You can recruit members after you’re set up, and we’ll help you build from there.' },
       { q: 'What happens after I apply?', a: 'Our team manually reviews every application and chapter interest form. There’s no interview. You’ll hear back by email, usually within a few days.' },
       { q: 'Are you a student at Andover?', a: 'Find any of our board members on campus. We’re happy to answer any questions about the club and welcome you to join.' },
