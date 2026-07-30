@@ -582,40 +582,40 @@ class Component extends DCLogic {
   state = { open: 0, scores: { curiosity: 0, feasibility: 0, trackfit: 0, novelty: 0 }, navOpen: false };
 
   componentDidMount() {
-    document.title = (this.props.brandName ?? 'Papers') + ' — Summer Program';
+    document.title = (this.props.brandName ?? 'Papers') + ' - Summer Program';
   }
 
   renderVals() {
     const brand = this.props.brandName ?? 'Papers';
     const FREE_SESSIONS = 3;
     const raw = [
-      { phase: 'Phase 1 · Initial Research', title: 'Introductory Meeting', desc: 'Full-group kickoff: how the program works, what\u2019s expected of you, and meeting your mentors. Then we jump straight into ideating.', hw: 'Brain-dump at least five research ideas \u2014 anything you\u2019ve ever been super curious about \u2014 then score them on the Idea Scoreboard and share your favorite with a friend or parent.' },
+      { phase: 'Phase 1 · Initial Research', title: 'Introductory Meeting', desc: 'Full-group kickoff: how the program works, what\u2019s expected of you, and meeting your mentors. Then we jump straight into ideating.', hw: 'Brain-dump at least five research ideas, anything you\u2019ve ever been super curious about, then score them on the Idea Scoreboard and share your favorite with a friend or parent.' },
       { phase: 'Phase 1 · Initial Research', title: 'Brainstorming & Parts of a Research Paper', desc: 'Narrow your ideas into a real research question, and take apart a paper to see how it\u2019s built: abstract, intro, methods, results, discussion.', hw: 'Pick your winning idea and draft your research question.' },
-      { phase: 'Phase 1 · Initial Research', title: 'Analyzing Literature Reviews', desc: 'Learn to find, read, and evaluate academic sources. What makes a good paper good \u2014 and a bad paper bad?', hw: 'Collect and skim 3\u20135 sources related to your question; note what\u2019s already known and where the gaps are.' },
-      { phase: 'Phase 1 · Initial Research', title: 'Presentation Day!', desc: 'Present your research question and early sources to the group. Practice explaining your idea clearly \u2014 and get feedback before you commit.', hw: '' },
-      { phase: 'Phase 2 · Formulation', title: 'Methodology', desc: 'What should you consider when developing your methods? Study designs, variables, data collection, feasibility, ethics, and bias \u2014 with real good-and-bad examples.', hw: 'Complete the Methods Worksheet: pick your study design, define your variables, plan your data collection, and flag one ethical risk and one source of bias.' },
+      { phase: 'Phase 1 · Initial Research', title: 'Analyzing Literature Reviews', desc: 'Learn to find, read, and evaluate academic sources. What makes a good paper good, and a bad paper bad?', hw: 'Collect and skim 3\u20135 sources related to your question; note what\u2019s already known and where the gaps are.' },
+      { phase: 'Phase 1 · Initial Research', title: 'Presentation Day!', desc: 'Present your research question and early sources to the group. Practice explaining your idea clearly, and get feedback before you commit.', hw: '' },
+      { phase: 'Phase 2 · Formulation', title: 'Methodology', desc: 'What should you consider when developing your methods? Study designs, variables, data collection, feasibility, ethics, and bias, with real good-and-bad examples.', hw: 'Complete the Methods Worksheet: pick your study design, define your variables, plan your data collection, and flag one ethical risk and one source of bias.' },
       { phase: 'Phase 2 · Formulation', title: 'Outline', desc: 'Map your full paper section by section so writing it later is filling in blanks, not staring at a blank page.', hw: 'Finish your outline and share it with your mentor.' },
       { phase: 'Phase 2 · Formulation', title: 'Work Meeting (small groups)', desc: 'Heads-down session in small groups: refine your outline and methods with peers and a mentor at the table.', hw: '' },
-      { phase: 'Phase 3 · Actualization', title: 'Abstract', desc: 'Learn to compress your whole project into one sharp paragraph \u2014 the first (and sometimes only) thing people read.', hw: 'Draft your abstract.' },
+      { phase: 'Phase 3 · Actualization', title: 'Abstract', desc: 'Learn to compress your whole project into one sharp paragraph: the first (and sometimes only) thing people read.', hw: 'Draft your abstract.' },
       { phase: 'Phase 3 · Actualization', title: 'Revising', desc: 'Editing strategies that actually work: structure passes, clarity passes, and how to give and receive useful peer feedback.', hw: 'Revise your draft using the checklist; swap papers with a partner for peer edits.' },
       { phase: 'Phase 3 · Actualization', title: 'Work Meeting!', desc: 'Final small-group session: polish your paper and rehearse your symposium presentation.', hw: '' },
-      { phase: 'Phase 3 · Actualization', title: 'Final Symposium', desc: 'Present your finished research to the whole community \u2014 fellow students, mentors, and guests. Finished papers go on to the ' + brand + ' Journal.', hw: '' },
+      { phase: 'Phase 3 · Actualization', title: 'Final Symposium', desc: 'Present your finished research to the whole community: fellow students, mentors, and guests. Finished papers go on to the ' + brand + ' Journal.', hw: '' },
     ];
     const criteria = [
       { key: 'curiosity', name: 'Curiosity', desc: 'How much do I actually care about this? Be honest!!' },
       { key: 'feasibility', name: 'Feasibility', desc: 'Can I actually DO this with the time, tools, and mentor help I have?' },
       { key: 'trackfit', name: 'Track Fit', desc: 'Does this match my track and what my mentor knows about?' },
-      { key: 'novelty', name: 'Novelty', desc: 'Am I asking something a little bit new \u2014 not just Google-able?' },
+      { key: 'novelty', name: 'Novelty', desc: 'Am I asking something a little bit new, not just Google-able?' },
     ];
     const s = this.state.scores;
     const total = s.curiosity + s.feasibility + s.trackfit + s.novelty;
     const scored = Object.values(s).every(v => v > 0);
     let verdict = 'Score all four categories to get your total.';
     if (scored) {
-      if (s.feasibility <= 2) verdict = 'Important rule: a Feasibility score of 1 or 2 means this idea is out \u2014 even if everything else is high. Pick a project you can actually finish!';
-      else if (total >= 16) verdict = 'That\u2019s a winner \u2014 bring this one to your mentor.';
+      if (s.feasibility <= 2) verdict = 'Important rule: a Feasibility score of 1 or 2 means this idea is out, even if everything else is high. Pick a project you can actually finish!';
+      else if (total >= 16) verdict = 'That\u2019s a winner, bring this one to your mentor.';
       else if (total >= 12) verdict = 'Solid! Sharpen the weak category and it could be your project.';
-      else verdict = 'Might not be the one \u2014 brain-dump a few more ideas and compare totals.';
+      else verdict = 'Might not be the one, brain-dump a few more ideas and compare totals.';
     }
     return {
       brand,

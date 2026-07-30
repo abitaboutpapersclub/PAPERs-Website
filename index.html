@@ -142,17 +142,6 @@
     .prog-body p { font-size: 14.5px; color: var(--gray); line-height: 1.75; flex: 1; }
     @media (max-width: 820px) { .prog-grid { grid-template-columns: 1fr; } }
 
-    /* SPOTLIGHT */
-    .spot-band { background: #1f3a63; padding: 96px 0; }
-    .spot { max-width: 640px; margin: 0 auto; }
-    .spot-text { color: #fff; }
-    .spot-body h2 { color: #fff; font-size: clamp(31px, 3.2vw, 41px); }
-    .spot-text { font-size: 15px; color: #f0f0f0; line-height: 1.85; max-width: 440px; margin: 0 0 26px; }
-    .spot-quote { display: flex; gap: 14px; text-align: left; max-width: 440px; margin: 0 0 14px; }
-    .qmark { font-size: 42px; font-weight: 700; color: var(--violet); line-height: 1; flex-shrink: 0; }
-    .spot-quote p { font-size: 15px; line-height: 1.7; color: #fff; }
-    .spot-attr { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-light); }
-
     /* COMMUNITY */
     .comm-band { padding: 96px 0 88px; }
     .trail-wrap { position: relative; margin-top: 8px; overflow: hidden; }
@@ -395,23 +384,6 @@
   </div>
 </section>
 
-<section class="spot-band" id="mission" data-screen-label="Alum Spotlight">
-  <div class="wrap">
-    <div class="spot">
-      <div class="spot-body">
-        <span class="eyebrow">About Us</span>
-        <h2>Who we are</h2>
-        <p class="spot-text">{{ brand }} is a student-run research nonprofit. We pair high schoolers with trained mentors, run a guided summer research program and school-year chapters, and publish finished work in our peer-reviewed journal, all at no cost to students.</p>
-        <div class="spot-quote">
-          <span class="qmark">“</span>
-          <p>The {{ brand }} Fellowship is definitely the most useful thing I have done all year.</p>
-        </div>
-        <p class="spot-attr">Barrett Kim · Phillips Academy · {{ brand }} '24-'25 Cohort</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="comm-band" data-screen-label="Community">
   <div class="wrap">
     <div class="sec-head">
@@ -589,7 +561,7 @@
     <div class="foot">
       <div>
         <span class="foot-logo">{{ brand }}</span>
-        <p class="foot-desc">Free research mentorship for high schoolers, from first question to published paper. By students, for students.</p>
+        <p class="foot-desc">{{ brand }} is a student-run research nonprofit. We pair high schoolers with trained mentors, run a guided summer research program and school-year chapters, and publish finished work in our peer-reviewed journal, all at no cost to students.</p>
       </div>
       <div class="foot-cols">
         <div class="foot-col">
@@ -601,7 +573,6 @@
         </div>
         <div class="foot-col">
           <h4>Organization</h4>
-          <a href="#mission">Mission</a>
           <a href="journal.html">Journal</a>
           <a href="chapters.html#reach-out">Contact</a>
         </div>
