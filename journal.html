@@ -46,7 +46,8 @@
     .mast-issue-badge { flex-shrink: 0; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 4px 13px; }
     .masthead h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5.4vw, 66px); font-weight: 800; line-height: 1.08; margin: 30px 0 14px; }
     .mast-sub { font-size: 15.5px; color: rgba(255,255,255,0.85); max-width: 560px; line-height: 1.8; }
-    .mast-search { display: flex; align-items: center; gap: 10px; max-width: 700px; margin-top: 30px; }
+    .mast-search-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 30px; }
+    .mast-search { display: flex; align-items: center; gap: 10px; max-width: 620px; flex: 1; }
     .mast-input { flex: 1; font-family: 'Poppins', sans-serif; font-size: 15px; padding: 13px 18px; border: none; border-radius: 6px; color: var(--ink); }
     .mast-input:focus { outline: 3px solid #6b9fd9; }
     .mast-search .btn { background: #4a72b8; border: 2px solid rgba(255,255,255,0.25); }
@@ -144,9 +145,11 @@
 
 <section class="masthead" data-screen-label="Journal Masthead">
   <div class="wrap">
-    <div class="mast-search">
-      <input class="mast-input" type="text" placeholder="Search papers by title, author, or topic…" value="{{ query }}" onChange="{{ onQuery }}">
-      <button class="btn">Search</button>
+    <div class="mast-search-row">
+      <div class="mast-search">
+        <input class="mast-input" type="text" placeholder="Search papers by title, author, or topic…" value="{{ query }}" onChange="{{ onQuery }}">
+        <button class="btn">Search</button>
+      </div>
       <span class="mast-issue-badge">2026 Issue</span>
     </div>
   </div>
