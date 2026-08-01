@@ -59,14 +59,20 @@
       .nav-menu-cta .btn { text-align: center; justify-content: center; color: #fff; }
     }
 
-    .lock-band { min-height: calc(100vh - 68px); display: flex; align-items: center; justify-content: center; padding: 80px 24px; }
-    .lock-card { max-width: 560px; width: 100%; text-align: center; background: #fff; border: 2.5px solid #111; border-radius: 12px; padding: 56px 48px; }
-    .lock-icon { width: 64px; height: 64px; margin: 0 auto 24px; background: #E8F0FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .lock-kicker { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet); display: block; margin-bottom: 12px; }
+    .lock-band { min-height: calc(100vh - 68px); display: flex; align-items: center; justify-content: center; padding: 80px 24px; position: relative; overflow: hidden; background: radial-gradient(ellipse 900px 500px at 50% 0%, rgba(31,58,99,0.08), transparent 70%); }
+    .lock-card { position: relative; max-width: 580px; width: 100%; text-align: center; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 60px 52px; box-shadow: 0 1px 2px rgba(23,17,43,0.04), 0 24px 60px -20px rgba(31,58,99,0.22); }
+    .lock-card::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 72px; height: 4px; border-radius: 0 0 4px 4px; background: linear-gradient(90deg, var(--violet), #4a72b8); }
+    .lock-icon { width: 68px; height: 68px; margin: 0 auto 26px; background: linear-gradient(155deg, #2c4d80, var(--violet) 60%); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px -8px rgba(31,58,99,0.5); }
+    .lock-kicker { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet); display: block; margin-bottom: 14px; }
     .lock-card h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 800; line-height: 1.15; margin-bottom: 14px; }
-    .lock-card > p { font-size: 15px; color: var(--gray); line-height: 1.8; margin-bottom: 30px; }
+    .lock-card > p { font-size: 15px; color: var(--gray); line-height: 1.8; margin-bottom: 28px; }
+    .lock-includes { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 30px; }
+    .lock-chip { font-size: 12.5px; font-weight: 500; color: var(--violet); background: #E8F0FF; border: 1px solid rgba(31,58,99,0.12); border-radius: 999px; padding: 6px 14px; }
     .lock-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .lock-note { font-size: 12px; color: var(--gray-light); margin-top: 22px; }
+    .lock-actions .btn { box-shadow: 0 6px 16px -6px rgba(31,58,99,0.45); }
+    .lock-actions .btn:hover { transform: translateY(-1px); }
+    .lock-actions .btn-ghost { box-shadow: none; }
+    .lock-note { font-size: 12px; color: var(--gray-light); margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line); }
   </style>
 </helmet>
 
@@ -107,11 +113,16 @@
 <section class="lock-band" data-screen-label="Curriculum Locked">
   <div class="lock-card">
     <div class="lock-icon">
-      <svg width="26" height="30" viewBox="0 0 26 30" fill="none"><rect x="1.5" y="12" width="23" height="16.5" rx="3" stroke="#1f3a63" stroke-width="2.5"></rect><path d="M6.5 12V8.5a6.5 6.5 0 0 1 13 0V12" stroke="#1f3a63" stroke-width="2.5"></path><circle cx="13" cy="20" r="2.2" fill="#1f3a63"></circle></svg>
+      <svg width="26" height="30" viewBox="0 0 26 30" fill="none"><rect x="1.5" y="12" width="23" height="16.5" rx="3" stroke="#fff" stroke-width="2.5"></rect><path d="M6.5 12V8.5a6.5 6.5 0 0 1 13 0V12" stroke="#fff" stroke-width="2.5"></path><circle cx="13" cy="20" r="2.2" fill="#fff"></circle></svg>
     </div>
     <span class="lock-kicker">Members only</span>
     <h1>The curriculum unlocks when you join</h1>
     <p>Our complete research curriculum, meeting-by-meeting slide decks, worksheets, and mentor guides, is available to chapter members and summer-program fellows.</p>
+    <div class="lock-includes">
+      <span class="lock-chip">Slide decks</span>
+      <span class="lock-chip">Worksheets</span>
+      <span class="lock-chip">Mentor guides</span>
+    </div>
     <div class="lock-actions">
       <a href="chapters.html#reach-out" class="btn">Join a chapter →</a>
       <a href="summer.html#apply" class="btn btn-ghost">Apply for summer →</a>
