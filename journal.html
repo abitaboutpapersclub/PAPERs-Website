@@ -59,8 +59,7 @@
     }
 
     /* MASTHEAD */
-    .masthead { background: #1f3a63; color: #fff; padding: 52px 0 56px; }
-    .mast-kicker { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.28); padding: 0 2px 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-text); }
+    .masthead { background: #1f3a63; color: #fff; padding: 52px 0 48px; }
     .mast-issue-badge { flex-shrink: 0; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 4px 13px; }
     .masthead h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5.4vw, 66px); font-weight: 800; line-height: 1.08; margin: 30px 0 14px; }
     .mast-sub { font-size: 15.5px; color: rgba(255,255,255,0.85); max-width: 560px; line-height: 1.8; }
@@ -68,26 +67,10 @@
     .mast-search { display: flex; align-items: center; gap: 10px; flex: 1; }
     .mast-input { flex: 1; font-family: 'Poppins', sans-serif; font-size: 15px; padding: 13px 18px; border: none; border-radius: 6px; color: var(--ink); }
     .mast-input:focus { outline: 3px solid #6b9fd9; }
-    .mast-search .btn { background: #4a72b8; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 14px 32px; font-size: 15.5px; }
+    .mast-search .btn { background: #4a72b8; border: 2px solid rgba(255,255,255,0.25); }
     .mast-search .btn:hover { background: #3d63a3; }
-    .mast-stats { display: flex; margin-top: 40px; flex-wrap: wrap; row-gap: 18px; border-top: 1px solid rgba(255,255,255,0.25); padding-top: 22px; }
-    .mast-stat { padding-right: 44px; margin-right: 44px; border-right: 1px solid rgba(255,255,255,0.2); }
-    .mast-stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
-    .mast-stat .num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; line-height: 1; }
-    .mast-stat .lbl { font-size: 11.5px; color: rgba(255,255,255,0.65); margin-top: 5px; letter-spacing: 0.06em; text-transform: uppercase; }
-    @media (max-width: 640px) {
-      .masthead { padding: 36px 0 44px; }
-      .mast-kicker { font-size: 10px; letter-spacing: 0.16em; }
-      .masthead h1 { margin: 24px 0 12px; }
-      .mast-search { flex-wrap: wrap; gap: 10px; }
-      .mast-input { flex: 1 1 100%; font-size: 16px; padding: 15px 18px; }
-      .mast-search .btn { flex: 1 1 100%; justify-content: center; }
-      .mast-stats { margin-top: 32px; }
-      .mast-stat { padding-right: 26px; margin-right: 26px; }
-      .mast-stat .num { font-size: 27px; }
-    }
+    @media (max-width: 640px) { .mast-search-row { flex-wrap: wrap; gap: 14px; } .mast-search { flex: 1 1 100%; } .mast-input { min-width: 0; } }
 
-    
     /* BROWSE */
     .browse-band { padding: 56px 0 96px; }
     .browse { display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
@@ -204,25 +187,16 @@
 
 <section class="masthead" data-screen-label="Journal Masthead">
   <div class="wrap">
-    <div class="mast-kicker">
-      <span>The {{ brand }} Journal</span>
+    <div class="mast-search-row">
+      <div class="mast-search">
+        <input class="mast-input" type="text" placeholder="Search papers by title, author, or topic…" value="{{ query }}" onChange="{{ onQuery }}">
+        <button class="btn">Search</button>
+      </div>
       <span class="mast-issue-badge">2026 Issue</span>
-    </div>
-    <h1>Student Journal</h1>
-    <p class="mast-sub">Peer-reviewed papers written by high-school researchers in the {{ brand }} program — spanning mathematics, computer science, biology, policy, and more.</p>
-    <div class="mast-search">
-      <input class="mast-input" type="text" placeholder="Search papers by title, author, or topic…" value="{{ query }}" onChange="{{ onQuery }}">
-      <button class="btn">Search</button>
-    </div>
-    <div class="mast-stats">
-      <div class="mast-stat"><div class="num">{{ totalPapers }}</div><div class="lbl">Published papers</div></div>
-      <div class="mast-stat"><div class="num">7</div><div class="lbl">Disciplines</div></div>
-      <div class="mast-stat"><div class="num">2</div><div class="lbl">Issues per year</div></div>
     </div>
   </div>
 </section>
 
-  
 <section class="browse-band" data-screen-label="Browse">
   <div class="wrap">
     <div class="browse">
@@ -372,7 +346,6 @@ class Component extends DCLogic {
       navOpenClass: this.state.navOpen ? 'open' : '',
       toggleNav: () => this.setState({ navOpen: !this.state.navOpen }),
       year: new Date().getFullYear(),
-      totalPapers: all.length,
       query: this.state.query,
       onQuery: (e) => this.setState({ query: e.target.value }),
       discFilters: discs.map(d => ({ name: d === 'All' ? 'All disciplines' : d, count: countFor(d), activeClass: this.state.disc === d ? 'active' : '', select: () => this.setState({ disc: d }) })),
