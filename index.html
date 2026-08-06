@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" href="favicon-180.png">
+  <meta name="description" content="Papers is a student-run research nonprofit. High schoolers get 1-on-1 mentorship, a guided summer research program, school-year chapters, and publication in our peer-reviewed journal, all free.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Papers">
+  <meta property="og:title" content="Papers">
+  <meta property="og:description" content="Papers is a student-run research nonprofit. High schoolers get 1-on-1 mentorship, a guided summer research program, school-year chapters, and publication in our peer-reviewed journal, all free.">
+  <meta property="og:image" content="favicon-180.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Papers">
+  <meta name="twitter:description" content="Papers is a student-run research nonprofit. High schoolers get 1-on-1 mentorship, a guided summer research program, school-year chapters, and publication in our peer-reviewed journal, all free.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
@@ -94,10 +103,6 @@
     .hero-ticker .tick-num { font-size: 30px; font-weight: 700; line-height: 1; }
     .hero-ticker .tick-label { font-size: 12px; color: rgba(255,255,255,0.85); margin-top: 4px; }
     .hero-ticker .tick-sub { font-size: 10.5px; color: rgba(255,255,255,0.55); margin-top: 2px; }
-    .hero-stat { color: rgba(255,255,255,0.85); font-size: 14px; margin: 28px 0 14px; }
-    .hero-stat sup { color: rgba(255,255,255,0.5); }
-    .hero-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 900px; margin: 0 auto; }
-    .uni-chip { display: inline-flex; align-items: center; justify-content: center; min-width: 100px; padding: 7px 14px; border: 1px dashed rgba(255,255,255,0.35); border-radius: 4px; color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 500; white-space: nowrap; }
 
     /* PROGRAM CHEVRONS */
     .flow-band { padding: 96px 0 88px; }
@@ -251,7 +256,7 @@
 <header data-screen-label="Nav">
   <div class="wrap">
     <nav class="nav">
-      <a href="#" class="nav-logo">{{ brand }}</a>
+      <a href="index.html" class="nav-logo">{{ brand }}</a>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="journal.html">Journal</a>
@@ -261,7 +266,7 @@
         <div class="nav-join">
           <span class="btn">Join Now <span style="font-size: 9px; margin-left: 2px">▼</span></span>
           <div class="nav-join-menu"><div>
-            <a href="chapters.html#reach-out">Apply for a Chapter</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener">Apply for a Chapter</a>
             <a href="summer.html#apply">Apply for Summer Program</a>
           </div></div>
         </div>
@@ -276,7 +281,7 @@
     <a href="curriculum.html">Curriculum</a>
     <a href="summer.html">Summer</a>
     <div class="nav-menu-cta">
-      <a href="chapters.html#reach-out" class="btn">Apply for a Chapter</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener" class="btn">Apply for a Chapter</a>
       <a href="summer.html#apply" class="btn">Apply for Summer Program</a>
     </div>
   </div>
@@ -390,7 +395,7 @@
         <img src="images/prog-chapters.webp" alt="A Papers chapter peer-review circle">
         <div class="prog-body">
           <h3>Chapters</h3>
-          <p>Start {{ brand }} at your own school and get access to guest speakers, curriculum, peer review, and resources from 20+ schools across the country.</p>
+          <p>Start {{ brand }} at your own school and get access to guest speakers, curriculum, peer review, and resources from our partner schools.</p>
           <a href="chapters.html" class="btn">Learn more <span class="arr">→</span></a>
         </div>
       </div>
@@ -536,7 +541,7 @@
     <div class="puz">
       <span class="eyebrow">Stay in the loop</span>
       <h2 class="sec" style="margin-bottom: 26px">Join our newsletter</h2>
-      <p>Get updates on applications, new chapters, published research, and everything {{ brand }} — straight to your inbox.</p>
+      <p>Get updates on applications, new chapters, published research, and everything {{ brand }}, straight to your inbox.</p>
       <div class="puz-form">
         <input class="puz-input" type="email" placeholder="you@email.com" autocomplete="email" value="{{ newsletterEmail }}" onChange="{{ onNewsletterChange }}">
         <button class="btn" onClick="{{ onNewsletterSubmit }}">{{ newsletterButtonLabel }}</button>
@@ -564,7 +569,7 @@
         <div class="foot-col">
           <h4>Organization</h4>
           <a href="journal.html">Journal</a>
-          <a href="chapters.html#reach-out">Contact</a>
+          <a href="mailto:contact.papersorg@gmail.com">Contact</a>
         </div>
       </div>
     </div>
@@ -643,13 +648,13 @@ class Component extends DCLogic {
     })).filter(d => d.projects.length > 0);
 
     const rawFaqs = [
-      { q: 'How do I start a chapter at my school?', a: 'Reach out through the Chapters page. We provide the complete curriculum, meeting-by-meeting materials, and a mentor contact — your school doesn’t need an existing research program.' },
+      { q: 'How do I start a chapter at my school?', a: 'Reach out through the Chapters page. We provide the complete curriculum, meeting-by-meeting materials, and a mentor contact. Your school doesn’t need an existing research program.' },
       { q: 'What is the Summer Program?', a: 'A guided, multi-session research experience. You choose a question you care about, design a methodology with an experienced mentor, and finish with a complete paper eligible for the ' + brand + ' Journal.' },
-      { q: 'How much does it cost?', a: 'Nothing. Applying is free and every program — chapters, the summer program, mentorship, and publication — is completely free for students.' },
+      { q: 'How much does it cost?', a: 'Nothing. Applying is free and every program, including chapters, the summer program, mentorship, and publication, is completely free for students.' },
       { q: 'Who are the mentors?', a: 'Experienced student researchers and university mentors from our partner-school network, trained on our curriculum and matched to your research topic.' },
       { q: 'Where can I apply?', a: React.createElement('span', null, 'You can find our application form ', React.createElement('a', { href: '#newsletter', style: { color: '#fff', textDecoration: 'underline' } }, 'here'), '.') },
       { q: 'Are the classes held online or in-person?', a: 'Classes are held online via Zoom.' },
-      { q: 'Is there an age or grade requirement?', a: 'The typical grade cutoff is 12th grade, but as long as you haven’t graduated high school yet, you’re eligible to apply.' },
+      { q: 'Is there an age or grade requirement?', a: 'Chapters are open to any current high schooler, as long as you haven’t graduated yet. The summer program is for students in grade 10 and under.' },
       { q: 'Do I need a group to start a Chapter?', a: 'No. One student is enough to start a chapter. You can recruit members after you’re set up, and we’ll help you build from there.' },
       { q: 'What happens after I apply?', a: 'Our team manually reviews every application and chapter interest form. There’s no interview. You’ll hear back by email, usually within a few days.' },
       { q: 'Andover student?', a: 'Find any of our board members on campus. We’re happy to answer any questions about the club and welcome you to join.' },
@@ -714,10 +719,11 @@ class Component extends DCLogic {
           .catch(() => this.setState({ newsletterStatus: 'error' }));
       },
       newsletterButtonLabel: this.state.newsletterStatus === 'sending' ? 'Joining…' : this.state.newsletterStatus === 'done' ? 'Joined ✓' : 'Join',
-      newsletterNote: this.state.newsletterStatus === 'invalid' ? 'Please enter a valid email address.' : this.state.newsletterStatus === 'done' ? 'You\'re on the list — welcome!' : this.state.newsletterStatus === 'error' ? 'Something went wrong — please try again.' : 'Unsubscribe anytime',
+      newsletterNote: this.state.newsletterStatus === 'invalid' ? 'Please enter a valid email address.' : this.state.newsletterStatus === 'done' ? 'You\'re on the list. Welcome!' : this.state.newsletterStatus === 'error' ? 'Something went wrong. Please try again.' : 'Unsubscribe anytime',
     };
   }
 }
 </script>
+<script src="./apply-modal.js"></script>
 </body>
 </html>

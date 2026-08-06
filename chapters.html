@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" href="favicon-180.png">
+  <meta name="description" content="Start a Papers chapter at your school. Guest speakers, a full research curriculum, peer review, and mentor support for student researchers, at no cost.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Papers">
+  <meta property="og:title" content="Papers - Chapters">
+  <meta property="og:description" content="Start a Papers chapter at your school. Guest speakers, a full research curriculum, peer review, and mentor support for student researchers, at no cost.">
+  <meta property="og:image" content="favicon-180.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Papers - Chapters">
+  <meta name="twitter:description" content="Start a Papers chapter at your school. Guest speakers, a full research curriculum, peer review, and mentor support for student researchers, at no cost.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
@@ -71,15 +80,7 @@
     .mast-search .btn:hover { background: #3d63a3; }
 
     /* WHAT */
-    .what-band { padding: 88px 0 40px; }
-    .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     @media (max-width: 860px) { .what-grid { grid-template-columns: 1fr; } }
-    .what { border: 2.5px solid #111; border-radius: 8px; padding: 30px 26px; background: #fff; }
-    .what-2 { background: #6b9fd9; color: #fff; }
-    .what-3 { background: #1f3a63; color: #fff; }
-    .what-num { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 10px; }
-    .what h3 { font-size: 21px; font-weight: 600; line-height: 1.35; margin-bottom: 10px; }
-    .what p { font-size: 14px; line-height: 1.7; opacity: 0.92; }
 
     /* PERKS */
     .perk-band { padding: 88px 0 96px; }
@@ -108,6 +109,7 @@
     .field input, .field textarea { width: 100%; font-family: 'Poppins', sans-serif; font-size: 14.5px; padding: 12px 14px; border: 1px solid #cfcade; border-radius: 6px; color: var(--ink); resize: vertical; }
     .field input:focus, .field textarea:focus { outline: 2px solid var(--violet); outline-offset: -1px; border-color: var(--violet); }
     .contact-note { font-size: 11.5px; color: var(--gray-light); margin-top: 12px; }
+    .contact-err { font-size: 13px; color: #b42318; margin-top: 10px; }
 
     footer { background: #1f3a63; color: rgba(255,255,255,0.65); padding: 64px 0 40px; }
     .foot { display: flex; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
@@ -134,7 +136,7 @@
         <div class="nav-join">
           <span class="btn">Join Now <span style="font-size: 9px; margin-left: 2px">▼</span></span>
           <div class="nav-join-menu"><div>
-            <a href="chapters.html#reach-out">Apply for a Chapter</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener">Apply for a Chapter</a>
             <a href="summer.html#apply">Apply for Summer Program</a>
           </div></div>
         </div>
@@ -149,7 +151,7 @@
     <a href="curriculum.html">Curriculum</a>
     <a href="summer.html">Summer</a>
     <div class="nav-menu-cta">
-      <a href="chapters.html#reach-out" class="btn">Apply for a Chapter</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener" class="btn">Apply for a Chapter</a>
       <a href="summer.html#apply" class="btn">Apply for Summer Program</a>
     </div>
   </div>
@@ -160,7 +162,7 @@
     <span class="mast-eyebrow">{{ brand }} Chapters</span>
     <h1>Bring research to your school.</h1>
     <p class="mast-sub">A {{ brand }} Chapter is a student-run research org/club at your school. Whether you already have a different club under a different name or don't have a club established yet, we'd love to help other high schoolers make research more accessible. Reach out to us to get access to our curriculum, slideshows, and organization; resources, example papers, and guest speakers; and collaboration between our global chapters network and journal. Fill out the form below or email us, and one of our outreach coordinators will give you access to the above!</p>
-    <span class="mast-search"><a href="#reach-out" class="btn">Reach out to start a chapter →</a></span>
+    <span class="mast-search"><a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener" class="btn">Reach out to start a chapter →</a></span>
   </div>
 </section>
 
@@ -202,13 +204,13 @@
         <span class="tagline">Start fresh</span>
         <h3>Found a new chapter</h3>
         <p>No research club at your school yet? We'll help you launch one: the full curriculum, resources, and a mentor contact to get your first meetings running. Especially great for schools without a research course.</p>
-        <a href="#reach-out" class="btn">Start a chapter →</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener" class="btn">Start a chapter →</a>
       </div>
       <div class="path">
         <span class="tagline">Have questions?</span>
         <h3>Inquire more about chapters</h3>
         <p>Not sure where to start, or already have a club and want to plug into the network? Reach out and we'll figure out the right fit for your school together.</p>
-        <a href="#reach-out" class="btn">Inquire →</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener" class="btn">Inquire →</a>
       </div>
     </div>
   </div>
@@ -219,29 +221,13 @@
     <div class="sec-head">
       <span class="eyebrow">Reach out</span>
       <h2 class="sec">Tell us about your school</h2>
-      <p>Fill this out and it opens an email to our chapters team. We usually reply within a few days.</p>
+      <p>Fill out the chapter application below. We usually reply within a few days.</p>
     </div>
     <div class="contact-card">
       <h3>Chapter interest form</h3>
-      <p>All fields help us route you to the right person.</p>
-      <div class="field">
-        <label>Your name</label>
-        <input type="text" placeholder="Jane Doe" value="{{ fName }}" onChange="{{ setName }}">
-      </div>
-      <div class="field">
-        <label>School &amp; class year</label>
-        <input type="text" placeholder="e.g. Northside High, class of '28" value="{{ fSchool }}" onChange="{{ setSchool }}">
-      </div>
-      <div class="field">
-        <label>New chapter or existing club?</label>
-        <input type="text" placeholder="e.g. starting new / we have a research club already" value="{{ fType }}" onChange="{{ setType }}">
-      </div>
-      <div class="field">
-        <label>Anything else</label>
-        <textarea rows="4" placeholder="Tell us about your school and what you're hoping to build…" value="{{ fMsg }}" onChange="{{ setMsg }}"></textarea>
-      </div>
-      <button class="btn" onClick="{{ sendEmail }}">Open email to send →</button>
-      <p class="contact-note">This opens your email app with everything pre-filled, just hit send.</p>
+      <p>Tell us your name, school, and whether you're starting a new chapter or already have a club, and we'll get you set up.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener" class="btn">Open the chapter application →</a>
+      <p class="contact-note">Prefer email? Reach us at <a href="mailto:contact.papersorg@gmail.com" style="text-decoration: underline;">contact.papersorg@gmail.com</a>.</p>
     </div>
   </div>
 </section>
@@ -251,58 +237,47 @@
     <div class="foot">
       <div>
         <span class="foot-logo">{{ brand }}</span>
-        <p class="foot-desc">We empower bright young people to start impactful research.</p>
+        <p class="foot-desc">{{ brand }} is a student-run research nonprofit. We pair high schoolers with trained mentors, run a guided summer research program and school-year chapters, and publish finished work in our peer-reviewed journal, all at no cost to students.</p>
       </div>
       <div class="foot-cols">
         <div class="foot-col">
-          <h4>Program</h4>
-          <a href="summer.html">Summer Program</a>
+          <h4>Programs</h4>
+          <a href="index.html#programs">How it works</a>
+          <a href="summer.html">Summer program</a>
           <a href="chapters.html">Chapters</a>
-          <a href="summer.html#apply">Application</a>
+          <a href="index.html#faqs">FAQs</a>
         </div>
         <div class="foot-col">
-          <h4>Journal</h4>
-          <a href="journal.html">Browse papers</a>
-          <a href="summer.html#apply">Submit</a>
+          <h4>Organization</h4>
+          <a href="journal.html">Journal</a>
+          <a href="mailto:contact.papersorg@gmail.com">Contact</a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© {{ year }} {{ brand }}. All rights reserved.</span>
-      <span></span>
+      <span>&copy; {{ year }} {{ brand }}. All rights reserved.</span>
     </div>
   </div>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Papers&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;chaptersEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;chapters@papersprogram.org&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Papers&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { name: '', school: '', type: '', msg: '', navOpen: false };
+  state = { navOpen: false };
 
   componentDidMount() {
     document.title = (this.props.brandName ?? 'Papers') + ' - Chapters';
   }
 
   renderVals() {
-    const brand = this.props.brandName ?? 'Papers';
-    const to = this.props.chaptersEmail ?? 'chapters@papersprogram.org';
     return {
-      brand,
+      brand: this.props.brandName ?? 'Papers',
       navOpenClass: this.state.navOpen ? 'open' : '',
       toggleNav: () => this.setState({ navOpen: !this.state.navOpen }),
       year: new Date().getFullYear(),
-      fName: this.state.name, setName: (e) => this.setState({ name: e.target.value }),
-      fSchool: this.state.school, setSchool: (e) => this.setState({ school: e.target.value }),
-      fType: this.state.type, setType: (e) => this.setState({ type: e.target.value }),
-      fMsg: this.state.msg, setMsg: (e) => this.setState({ msg: e.target.value }),
-      sendEmail: () => {
-        const s = this.state;
-        const subject = `Chapter interest: ${s.school || 'my school'}`;
-        const body = `Hi ${brand} team,%0D%0A%0D%0AName: ${encodeURIComponent(s.name)}%0D%0ASchool: ${encodeURIComponent(s.school)}%0D%0ANew chapter or existing club: ${encodeURIComponent(s.type)}%0D%0A%0D%0A${encodeURIComponent(s.msg)}`;
-        window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
-      },
     };
   }
 }
 </script>
+<script src="./apply-modal.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" href="favicon-180.png">
+  <meta name="description" content="Browse peer-reviewed research papers written by high-school students in the Papers program, across biology, medicine, economics, social sciences, and computer science.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Papers">
+  <meta property="og:title" content="Papers - Journal">
+  <meta property="og:description" content="Browse peer-reviewed research papers written by high-school students in the Papers program, across biology, medicine, economics, social sciences, and computer science.">
+  <meta property="og:image" content="favicon-180.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Papers - Journal">
+  <meta name="twitter:description" content="Browse peer-reviewed research papers written by high-school students in the Papers program, across biology, medicine, economics, social sciences, and computer science.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
@@ -58,11 +67,10 @@
       .nav-menu-cta .btn { text-align: center; justify-content: center; color: #fff; }
     }
 
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     /* MASTHEAD */
     .masthead { background: #1f3a63; color: #fff; padding: 52px 0 48px; }
     .mast-issue-badge { flex-shrink: 0; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 4px 13px; }
-    .masthead h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5.4vw, 66px); font-weight: 800; line-height: 1.08; margin: 30px 0 14px; }
-    .mast-sub { font-size: 15.5px; color: rgba(255,255,255,0.85); max-width: 560px; line-height: 1.8; }
     .mast-search-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 30px; }
     .mast-search { display: flex; align-items: center; gap: 10px; flex: 1; }
     .mast-input { flex: 1; font-family: 'Poppins', sans-serif; font-size: 15px; padding: 13px 18px; border: none; border-radius: 6px; color: var(--ink); }
@@ -104,7 +112,6 @@
     .paper-disc { font-size: 11px; color: var(--gray-light); }
     .paper h3 { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; line-height: 1.35; margin-bottom: 6px; }
     .paper-authors { font-size: 13px; color: var(--gray); margin-bottom: 10px; }
-    .paper-abs { font-size: 14px; color: var(--gray); line-height: 1.75; margin-bottom: 14px; }
     .paper-foot { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; font-size: 12px; color: var(--gray-light); }
     .paper-foot .read { color: var(--violet); font-weight: 600; font-size: 13px; margin-left: auto; }
     .paper:hover .read { text-decoration: underline; }
@@ -127,12 +134,6 @@
       .modal { max-width: 100%; max-height: 92vh; border-radius: 16px 16px 0 0; padding: 26px 22px 32px; }
       .modal h3 { font-size: 21px; }
     }
-    .reader-overlay { position: fixed; inset: 0; background: #17112b; z-index: 600; display: flex; flex-direction: column; }
-    .reader-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; color: #fff; }
-    .reader-bar span { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .reader-bar button { background: rgba(255,255,255,0.12); color: #fff; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 13px; padding: 8px 16px; cursor: pointer; }
-    .reader-bar button:hover { background: rgba(255,255,255,0.22); }
-    .reader-frame { flex: 1; border: none; background: #fff; }
 
     /* SUBMIT CTA */
     .submit-band { background: #E8F0FF; padding: 80px 0; text-align: center; }
@@ -164,7 +165,7 @@
         <div class="nav-join">
           <span class="btn">Join Now <span style="font-size: 9px; margin-left: 2px">▼</span></span>
           <div class="nav-join-menu"><div>
-            <a href="chapters.html#reach-out">Apply for a Chapter</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener">Apply for a Chapter</a>
             <a href="summer.html#apply">Apply for Summer Program</a>
           </div></div>
         </div>
@@ -179,7 +180,7 @@
     <a href="curriculum.html">Curriculum</a>
     <a href="summer.html">Summer</a>
     <div class="nav-menu-cta">
-      <a href="chapters.html#reach-out" class="btn">Apply for a Chapter</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJdb5DwY8zo_yaOlO1CS8OxnJYoPT7My9ZKUj5C1-XQAijgg/viewform?usp=header" target="_blank" rel="noopener" class="btn">Apply for a Chapter</a>
       <a href="summer.html#apply" class="btn">Apply for Summer Program</a>
     </div>
   </div>
@@ -187,10 +188,11 @@
 
 <section class="masthead" data-screen-label="Journal Masthead">
   <div class="wrap">
+    <h1 class="sr-only">Papers Journal</h1>
     <div class="mast-search-row">
       <div class="mast-search">
-        <input class="mast-input" type="text" placeholder="Search papers by title, author, or topic…" value="{{ query }}" onChange="{{ onQuery }}">
-        <button class="btn">Search</button>
+        <input class="mast-input" type="text" placeholder="Search papers by title, author, or topic…" value="{{ query }}" onChange="{{ onQuery }}" onKeyDown="{{ onQueryKey }}">
+        <button class="btn" onClick="{{ runSearch }}">Search</button>
       </div>
       <span class="mast-issue-badge">2026 Issue</span>
     </div>
@@ -239,7 +241,7 @@
           </sc-for>
         </div>
         <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
-          <p class="no-results">No papers match your search — try a different term or discipline.</p>
+          <p class="no-results">No papers here yet. Try a different filter or search term.</p>
         </sc-if>
       </div>
     </div>
@@ -250,7 +252,7 @@
   <div class="wrap">
     <h2>Have research to share?</h2>
     <p>Fellows in the {{ brand }} program can submit their finished papers to the journal for review and publication.</p>
-    <a href="index.html#apply" class="btn">Join the program →</a>
+    <a href="summer.html#apply" class="btn">Join the program →</a>
   </div>
 </section>
 
@@ -278,41 +280,30 @@
     </div>
   </div>
 </sc-if>
-<sc-if value="{{ readerOpen }}" hint-placeholder-val="{{ false }}">
-  <div class="reader-overlay">
-    <div class="reader-bar">
-      <span>{{ mTitle }}</span>
-      <button onClick="{{ closeReader }}">Close ×</button>
-    </div>
-    <iframe class="reader-frame" src="{{ pdfSrc }}"></iframe>
-  </div>
-</sc-if>
-
 <footer data-screen-label="Footer">
   <div class="wrap">
     <div class="foot">
       <div>
         <span class="foot-logo">{{ brand }}</span>
-        <p class="foot-desc">We empower bright young people to start impactful research.</p>
+        <p class="foot-desc">{{ brand }} is a student-run research nonprofit. We pair high schoolers with trained mentors, run a guided summer research program and school-year chapters, and publish finished work in our peer-reviewed journal, all at no cost to students.</p>
       </div>
       <div class="foot-cols">
         <div class="foot-col">
-          <h4>Fellowship</h4>
-          <a href="index.html#apply">Application</a>
-          <a href="index.html#programs">Program</a>
-          <a href="index.html#projects">Winners</a>
+          <h4>Programs</h4>
+          <a href="index.html#programs">How it works</a>
+          <a href="summer.html">Summer program</a>
+          <a href="chapters.html">Chapters</a>
           <a href="index.html#faqs">FAQs</a>
         </div>
         <div class="foot-col">
-          <h4>Journal</h4>
-          <a href="journal.html">Browse papers</a>
-          <a href="index.html#apply">Submit</a>
-          <a href="admin.html">Admin</a>
+          <h4>Organization</h4>
+          <a href="journal.html">Journal</a>
+          <a href="mailto:contact.papersorg@gmail.com">Contact</a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© {{ year }} {{ brand }}. All rights reserved.</span>
+      <span>&copy; {{ year }} {{ brand }}. All rights reserved.</span>
       <span>ISSN pending</span>
     </div>
   </div>
@@ -320,10 +311,10 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Papers&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { disc: 'All', issue: 'All', query: '', all: null, selected: null, reader: false, navOpen: false };
+  state = { disc: 'All', issue: 'All', query: '', all: null, selected: null, navOpen: false };
 
   componentDidMount() {
-    document.title = (this.props.brandName ?? 'Papers') + ' Journal';
+    document.title = (this.props.brandName ?? 'Papers') + ' - Journal';
     import('./journal-data.js').then(m => m.fetchPapers().then(all => this.setState({ all })));
   }
 
@@ -331,7 +322,7 @@ class Component extends DCLogic {
     const brand = this.props.brandName ?? 'Papers';
     const all = this.state.all || [];
     const discs = ['All', 'Biology & Life Sciences', 'Medicine & Health', 'Economics', 'Social Sciences', 'Computer Science', 'Other'];
-    const issues = ['All', 'Vol. 2 · 2026 Cohort'];
+    const issues = ['All', 'Vol. 2 · 2026 Cohort', '2026 Summer Cohort'];
     const q = this.state.query.trim().toLowerCase();
     const filtered = all.filter(p =>
       (this.state.disc === 'All' || p.discipline === this.state.disc) &&
@@ -348,26 +339,35 @@ class Component extends DCLogic {
       year: new Date().getFullYear(),
       query: this.state.query,
       onQuery: (e) => this.setState({ query: e.target.value }),
+      runSearch: () => {
+        const el = document.querySelector('.results-head');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      },
+      onQueryKey: (e) => {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        e.target.blur();
+        const el = document.querySelector('.results-head');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      },
       discFilters: discs.map(d => ({ name: d === 'All' ? 'All disciplines' : d, count: countFor(d), activeClass: this.state.disc === d ? 'active' : '', select: () => this.setState({ disc: d }) })),
       issueFilters: issues.map(i => ({ name: i === 'All' ? 'All issues' : i, count: countForIssue(i), activeClass: this.state.issue === i ? 'active' : '', select: () => this.setState({ issue: i }) })),
-      papers: filtered.map(p => ({ ...p, hasAbstract: !!p.abstract, open: (e) => { e.preventDefault(); this.setState({ selected: p.id, reader: false }); } })),
+      papers: filtered.map(p => ({ ...p, hasAbstract: !!p.abstract, open: (e) => { e.preventDefault(); this.setState({ selected: p.id }); } })),
       shownCount: filtered.length,
       resultsWord: filtered.length === 1 ? 'paper' : 'papers',
       noResults: filtered.length === 0,
-      modalOpen: !!sel && !this.state.reader,
+      modalOpen: !!sel,
       mTag: sel ? sel.tag : '', mDiscipline: sel ? sel.discipline : '', mTitle: sel ? sel.title : '',
       mAuthor: sel ? sel.author : '', mIssue: sel ? sel.issue : '', mPages: sel ? sel.pages : '',
       mDate: sel ? sel.date : '', mAbstract: sel ? sel.abstract : '',
       hasPdf: !!(sel && sel.pdf), noPdf: !!sel && !sel.pdf,
-      closeModal: () => this.setState({ selected: null, reader: false }),
+      closeModal: () => this.setState({ selected: null }),
       stopClick: (e) => e.stopPropagation(),
-      openReader: () => this.setState({ reader: true }),
-      closeReader: () => this.setState({ reader: false }),
-      readerOpen: !!sel && this.state.reader && !!sel.pdf,
-      pdfSrc: sel && sel.pdf ? sel.pdf : '',
+      openReader: () => { if (sel && sel.pdf) window.open(sel.pdf, '_blank', 'noopener'); },
     };
   }
 }
 </script>
+<script src="./apply-modal.js"></script>
 </body>
 </html>
